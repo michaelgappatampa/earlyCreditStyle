@@ -1,8 +1,6 @@
 /* =========================================================
    SUNCOAST TAMPA ASSOCIATION OF REALTORS
    CREDIT / EDUCATION WEB ELEMENT
-
-   Clean consolidated stylesheet
    ========================================================= */
 
 
@@ -19,7 +17,7 @@
 
     --star-white: #ffffff;
 
-    --star-background: #f1f5f7;
+    --star-background: #eef3f6;
     --star-background-light: #f7f9fa;
 
     --star-text: #293a44;
@@ -31,7 +29,7 @@
     --star-radius: 14px;
 
     --star-shadow:
-        0 3px 10px rgba(16, 47, 69, 0.06),
+        0 3px 10px rgba(16, 47, 69, 0.07),
         0 1px 3px rgba(16, 47, 69, 0.04);
 
     --star-shadow-hover:
@@ -41,7 +39,7 @@
 
 
 /* =========================================================
-   GENERAL
+   PAGE
    ========================================================= */
 
 html,
@@ -56,32 +54,27 @@ body {
 
 
 /* =========================================================
-   RAMCO CONTAINER
-
-   Removes the old fixed-width Nevia layout and allows
-   the web element to expand with the available screen.
+   EXPAND OLD RAMCO / NEVIA CONTAINER
    ========================================================= */
 
-.container.floated {
+#content > .container.floated {
     float: none !important;
 
-    width: calc(100% - 32px) !important;
-    max-width: 1440px !important;
+    width: calc(100% - 24px) !important;
+    max-width: 1400px !important;
 
     margin-left: auto !important;
     margin-right: auto !important;
 
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
 
     box-sizing: border-box !important;
 }
 
 
-/* Remove old fixed-width restrictions */
-
-.container.floated .grid,
-.container.floated .row,
+#content > .container.floated .grid,
+#content > .container.floated .row,
 #updatePanel,
 #formPanel {
     width: 100% !important;
@@ -98,41 +91,50 @@ body {
 
 
 /* =========================================================
-   MAIN CONTENT LAYOUT
+   MAIN RAMCO LEFT / RIGHT LAYOUT
 
-   Desktop:
-   [ Article Cards                   ] [ Search ]
+   IMPORTANT:
+   Do not convert this container to CSS Grid.
 
+   RAMCO expects:
+   LEFT RECORDS | RIGHT FILTERS
    ========================================================= */
 
 #RightSidebarLayout {
-    display: grid !important;
+    display: block !important;
 
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(220px, 270px);
-
-    align-items: start !important;
-
-    gap: 24px !important;
+    position: relative !important;
 
     width: 100% !important;
     max-width: none !important;
 
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
     margin: 0 !important;
 
-    padding: 28px !important;
+    padding: 24px !important;
 
     background: var(--star-background) !important;
+
+    overflow: visible !important;
 
     box-sizing: border-box !important;
 }
 
 
-/* =========================================================
-   LEFT ARTICLE AREA
+#RightSidebarLayout::after {
+    content: "";
 
-   Two cards per row on desktop.
+    display: table;
+
+    clear: both;
+}
+
+
+/* =========================================================
+   LEFT RECORD COLUMN
    ========================================================= */
 
 #rightSidebarLeftContent {
@@ -141,34 +143,40 @@ body {
     grid-template-columns:
         repeat(2, minmax(0, 1fr)) !important;
 
+    gap: 18px !important;
+
     align-items: stretch !important;
 
-    gap: 20px !important;
+    float: left !important;
 
-    float: none !important;
+    position: static !important;
 
-    width: 100% !important;
+    width: calc(75% - 12px) !important;
     max-width: none !important;
     min-width: 0 !important;
 
     /*
-       RAMCO adds an inline height to this element.
-       !important overrides it.
+       RAMCO sometimes writes an inline height here.
+       This overrides it.
     */
     height: auto !important;
     min-height: 0 !important;
+    max-height: none !important;
 
     margin: 0 !important;
     padding: 0 !important;
 
     overflow: visible !important;
 
+    visibility: visible !important;
+    opacity: 1 !important;
+
     box-sizing: border-box !important;
 }
 
 
 /* =========================================================
-   ARTICLE CARD
+   ARTICLE CARDS
    ========================================================= */
 
 #rightSidebarLeftContent article.post.medium {
@@ -176,13 +184,16 @@ body {
 
     flex-direction: column !important;
 
+    position: static !important;
+
     float: none !important;
 
     width: 100% !important;
     max-width: none !important;
     min-width: 0 !important;
 
-    height: 100% !important;
+    height: auto !important;
+    min-height: 155px !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -196,6 +207,9 @@ body {
 
     overflow: hidden !important;
 
+    visibility: visible !important;
+    opacity: 1 !important;
+
     box-sizing: border-box !important;
 
     transition:
@@ -204,8 +218,6 @@ body {
         border-color 0.2s ease !important;
 }
 
-
-/* Card hover */
 
 @media (hover: hover) {
 
@@ -234,10 +246,14 @@ body {
     min-width: 0 !important;
 
     height: 100% !important;
+    min-height: 155px !important;
 
     margin: 0 !important;
 
-    padding: 26px !important;
+    padding: 24px !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
 
     box-sizing: border-box !important;
 }
@@ -250,6 +266,8 @@ body {
 #rightSidebarLeftContent article.post.medium header.meta {
     display: block !important;
 
+    position: static !important;
+
     width: 100% !important;
 
     margin: 0 !important;
@@ -260,6 +278,9 @@ body {
     border: 0 !important;
 
     box-shadow: none !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
 
     box-sizing: border-box !important;
 }
@@ -277,12 +298,15 @@ body {
 
     color: var(--star-navy) !important;
 
-    font-size: 21px !important;
+    font-size: 20px !important;
     font-weight: 700 !important;
 
-    line-height: 1.25 !important;
+    line-height: 1.3 !important;
 
     text-transform: none !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 
@@ -322,7 +346,7 @@ body {
 #rightSidebarLeftContent article.post.medium .medium-content > p {
     display: block !important;
 
-    margin: 0 0 22px 0 !important;
+    margin: 0 0 20px 0 !important;
     padding: 0 !important;
 
     color: var(--star-muted) !important;
@@ -331,6 +355,9 @@ body {
     font-weight: 500 !important;
 
     line-height: 1.5 !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 
@@ -349,12 +376,13 @@ body {
     gap: 8px !important;
 
     width: auto !important;
-
     min-width: 0 !important;
+
     min-height: 44px !important;
 
     /*
-       Pushes buttons to the bottom when title lengths vary.
+       Keeps buttons aligned at the bottom when
+       card titles have different lengths.
     */
     margin: auto 0 0 0 !important;
 
@@ -370,7 +398,7 @@ body {
     border-radius: 9px !important;
 
     box-shadow:
-        0 2px 5px rgba(16, 47, 69, 0.14) !important;
+        0 2px 5px rgba(16, 47, 69, 0.15) !important;
 
     font-size: 14px !important;
     font-weight: 700 !important;
@@ -381,6 +409,9 @@ body {
 
     text-decoration: none !important;
     text-shadow: none !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
 
     cursor: pointer !important;
 
@@ -394,7 +425,7 @@ body {
 }
 
 
-/* Add arrow */
+/* Arrow */
 
 #rightSidebarLeftContent article.post.medium a.button.color::after {
     content: "\2192";
@@ -404,7 +435,7 @@ body {
     font-size: 16px;
     line-height: 1;
 
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease !important;
 }
 
 
@@ -443,7 +474,9 @@ body {
 
 /* =========================================================
    PAGINATION
-   Keep RAMCO paging active and visible
+
+   Keep RAMCO pagination intact.
+   It is part of the Query List structure.
    ========================================================= */
 
 #RightSidebarLeftContentPlaceHolder_queryList_PageFilter_ClearFix {
@@ -461,7 +494,7 @@ body {
 }
 
 
-/* Keep pagination underneath all article cards */
+/* Pagination container */
 
 #rightSidebarLeftContent .pagination,
 #RightSidebarLeftContentPlaceHolder_queryList_PageFilter_PageFilter {
@@ -469,10 +502,15 @@ body {
 
     grid-column: 1 / -1 !important;
 
+    position: static !important;
+
     width: 100% !important;
 
-    margin: 10px 0 0 0 !important;
+    margin: 8px 0 0 0 !important;
     padding: 8px 0 0 0 !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
 
     box-sizing: border-box !important;
 }
@@ -484,6 +522,7 @@ body {
     display: flex !important;
 
     flex-wrap: wrap !important;
+
     align-items: center !important;
 
     gap: 7px !important;
@@ -495,7 +534,7 @@ body {
 }
 
 
-/* Remove old RAMCO float behavior */
+/* Pagination item */
 
 #rightSidebarLeftContent .pagination ul li {
     display: block !important;
@@ -507,7 +546,7 @@ body {
 }
 
 
-/* Page buttons */
+/* Pagination button */
 
 #rightSidebarLeftContent .pagination ul li a {
     display: inline-flex !important;
@@ -519,13 +558,14 @@ body {
     height: 38px !important;
 
     margin: 0 !important;
+
     padding: 0 11px !important;
 
-    background: #ffffff !important;
+    background: var(--star-white) !important;
 
-    color: #173f59 !important;
+    color: var(--star-navy) !important;
 
-    border: 1px solid #dce5e9 !important;
+    border: 1px solid var(--star-border) !important;
     border-radius: 8px !important;
 
     box-shadow:
@@ -551,48 +591,26 @@ body {
 /* Current page */
 
 #rightSidebarLeftContent .pagination ul li a.current {
-    background: #173f59 !important;
+    background: var(--star-navy) !important;
 
-    color: #ffffff !important;
+    color: var(--star-white) !important;
 
-    border-color: #173f59 !important;
+    border-color: var(--star-navy) !important;
 }
 
 
-/* Hover */
+/* Pagination hover */
 
 #rightSidebarLeftContent .pagination ul li a:hover {
-    background: #f36570 !important;
+    background: var(--star-coral) !important;
 
-    color: #ffffff !important;
+    color: var(--star-white) !important;
 
-    border-color: #f36570 !important;
+    border-color: var(--star-coral) !important;
 
     transform: translateY(-1px);
 }
 
-
-/* Mobile pagination */
-
-@media screen and (max-width: 650px) {
-
-    #rightSidebarLeftContent .pagination {
-        margin-top: 4px !important;
-        padding-top: 6px !important;
-    }
-
-
-    #rightSidebarLeftContent .pagination ul {
-        justify-content: center !important;
-    }
-
-
-    #rightSidebarLeftContent .pagination ul li a {
-        min-width: 40px !important;
-        height: 40px !important;
-    }
-
-}
 
 /* =========================================================
    RIGHT SEARCH COLUMN
@@ -601,14 +619,22 @@ body {
 #rightSidebarRightContent {
     display: block !important;
 
-    float: none !important;
+    float: right !important;
 
-    width: 100% !important;
+    position: static !important;
+
+    width: calc(25% - 12px) !important;
     max-width: none !important;
     min-width: 0 !important;
 
+    height: auto !important;
+    min-height: 0 !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
 
     box-sizing: border-box !important;
 }
@@ -625,7 +651,7 @@ body {
 
     margin: 0 !important;
 
-    padding: 22px !important;
+    padding: 20px !important;
 
     background: var(--star-white) !important;
 
@@ -639,7 +665,7 @@ body {
 
 
 /* =========================================================
-   SEARCH FILTER CONTAINER
+   SEARCH FILTER
    ========================================================= */
 
 #rightSidebar .widget-search {
@@ -665,10 +691,10 @@ body {
 
     color: var(--star-navy) !important;
 
-    font-size: 15px !important;
+    font-size: 14px !important;
     font-weight: 700 !important;
 
-    line-height: 1.35 !important;
+    line-height: 1.4 !important;
 }
 
 
@@ -699,22 +725,22 @@ body {
     display: block !important;
 
     width: 100% !important;
-    height: 46px !important;
+    height: 44px !important;
 
     margin: 0 !important;
 
     padding:
         10px
-        48px
+        44px
         10px
-        14px !important;
+        12px !important;
 
     background: var(--star-background-light) !important;
 
     color: var(--star-text) !important;
 
     border: 1px solid var(--star-border-dark) !important;
-    border-radius: 9px !important;
+    border-radius: 8px !important;
 
     box-shadow: none !important;
 
@@ -746,6 +772,16 @@ body {
    ========================================================= */
 
 #rightSidebar .search-btn-widget {
+    position: absolute !important;
+
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 44px !important;
+    height: 44px !important;
+
+    margin: 0 !important;
+
     background-color: var(--star-navy) !important;
 
     border-radius: 0 8px 8px 0 !important;
@@ -763,37 +799,41 @@ body {
 /* =========================================================
    TABLET
 
-   Sidebar moves below the cards.
-   Cards remain two columns.
+   Keep cards in two columns.
+   Move search below the records.
    ========================================================= */
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
 
-    .container.floated {
-        width: calc(100% - 20px) !important;
+    #content > .container.floated {
+        width: calc(100% - 16px) !important;
 
-        padding-left: 10px !important;
-        padding-right: 10px !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
     }
 
 
     #RightSidebarLayout {
-        grid-template-columns: 1fr !important;
-
-        gap: 20px !important;
-
-        padding: 20px !important;
+        padding: 18px !important;
     }
 
 
     #rightSidebarLeftContent {
+        float: none !important;
+
+        width: 100% !important;
+
         grid-template-columns:
             repeat(2, minmax(0, 1fr)) !important;
     }
 
 
     #rightSidebarRightContent {
+        float: none !important;
+
         width: 100% !important;
+
+        margin-top: 18px !important;
     }
 
 
@@ -808,70 +848,39 @@ body {
    MOBILE
 
    One card per row.
-   Everything stays inside viewport.
    ========================================================= */
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 600px) {
 
-    .container.floated {
-        float: none !important;
-
+    #content > .container.floated {
         width: 100% !important;
         max-width: none !important;
 
-        margin: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
 
-        padding-left: 8px !important;
-        padding-right: 8px !important;
-    }
-
-
-    .container.floated .grid,
-    .container.floated .row,
-    #updatePanel,
-    #formPanel {
-        width: 100% !important;
-        max-width: none !important;
-
-        margin: 0 !important;
-
-        padding: 0 !important;
+        padding-left: 6px !important;
+        padding-right: 6px !important;
     }
 
 
     #RightSidebarLayout {
-        display: grid !important;
-
-        grid-template-columns: 1fr !important;
-
-        gap: 16px !important;
-
         width: 100% !important;
-        max-width: none !important;
 
         margin: 0 !important;
 
-        padding: 14px !important;
-
-        box-sizing: border-box !important;
+        padding: 12px !important;
     }
 
 
     #rightSidebarLeftContent {
-        display: grid !important;
-
         grid-template-columns: 1fr !important;
 
         gap: 14px !important;
 
         width: 100% !important;
-        max-width: none !important;
-        min-width: 0 !important;
 
         height: auto !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
 
         overflow: visible !important;
     }
@@ -879,12 +888,8 @@ body {
 
     #rightSidebarLeftContent article.post.medium {
         width: 100% !important;
-        max-width: none !important;
-        min-width: 0 !important;
 
-        height: auto !important;
-
-        margin: 0 !important;
+        min-height: 0 !important;
 
         border-radius: 12px !important;
     }
@@ -892,6 +897,9 @@ body {
 
     #rightSidebarLeftContent article.post.medium .medium-content {
         width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
 
         padding: 20px !important;
     }
@@ -909,13 +917,9 @@ body {
     }
 
 
-    /*
-       Full-width mobile button for easier tapping
-    */
+    /* Full-width mobile button */
 
     #rightSidebarLeftContent article.post.medium a.button.color {
-        display: flex !important;
-
         align-self: stretch !important;
 
         width: 100% !important;
@@ -926,20 +930,30 @@ body {
     }
 
 
+    /* Center page controls */
+
+    #rightSidebarLeftContent .pagination ul {
+        justify-content: center !important;
+    }
+
+
+    #rightSidebarLeftContent .pagination ul li a {
+        min-width: 40px !important;
+        height: 40px !important;
+    }
+
+
     #rightSidebarRightContent {
         width: 100% !important;
-        max-width: none !important;
 
-        margin: 0 !important;
+        margin-top: 16px !important;
     }
 
 
     #rightSidebar {
         width: 100% !important;
 
-        margin: 0 !important;
-
-        padding: 20px !important;
+        padding: 18px !important;
 
         border-radius: 12px !important;
     }
@@ -953,14 +967,14 @@ body {
 
 @media screen and (max-width: 380px) {
 
-    .container.floated {
-        padding-left: 4px !important;
-        padding-right: 4px !important;
+    #content > .container.floated {
+        padding-left: 3px !important;
+        padding-right: 3px !important;
     }
 
 
     #RightSidebarLayout {
-        padding: 10px !important;
+        padding: 9px !important;
     }
 
 
@@ -980,7 +994,7 @@ body {
 
 
     #rightSidebar {
-        padding: 18px !important;
+        padding: 16px !important;
     }
 
 }
@@ -994,6 +1008,7 @@ body {
 #rightSidebar a:focus-visible,
 #rightSidebar input:focus-visible {
     outline: 3px solid var(--star-coral) !important;
+
     outline-offset: 3px !important;
 }
 
@@ -1017,83 +1032,4 @@ body {
         transform: none !important;
     }
 
-}
-
-/* =========================================================
-   FIX RAMCO RECORD CONTAINER HEIGHT
-   ========================================================= */
-
-#RightSidebarLayout,
-#rightSidebarLeftContent {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-}
-
-
-/* Make sure records are never clipped */
-
-#rightSidebarLeftContent {
-    overflow: visible !important;
-}
-
-
-/* Make sure individual records remain visible */
-
-#rightSidebarLeftContent article.post.medium {
-    display: flex !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
-
-    height: auto !important;
-    min-height: 140px !important;
-
-    overflow: visible !important;
-}
-
-
-/* Keep card contents visible */
-
-#rightSidebarLeftContent article.post.medium .medium-content {
-    display: flex !important;
-
-    flex-direction: column !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
-
-    height: auto !important;
-    min-height: 140px !important;
-}
-
-
-/* =========================================================
-   PAGINATION
-   ========================================================= */
-
-#RightSidebarLeftContentPlaceHolder_queryList_PageFilter_ClearFix {
-    display: block !important;
-
-    grid-column: 1 / -1 !important;
-
-    clear: both !important;
-
-    width: 100% !important;
-    height: 0 !important;
-}
-
-
-#rightSidebarLeftContent .pagination,
-#RightSidebarLeftContentPlaceHolder_queryList_PageFilter_PageFilter {
-    display: block !important;
-
-    grid-column: 1 / -1 !important;
-
-    width: 100% !important;
-
-    margin-top: 18px !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
 }
