@@ -5,7 +5,7 @@
 
 
 /* =========================================================
-   BRAND VARIABLES
+   BRAND
    ========================================================= */
 
 :root {
@@ -39,6 +39,18 @@
 
 
 /* =========================================================
+   BOX SIZING
+   ========================================================= */
+
+#content,
+#content *,
+#content *::before,
+#content *::after {
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
    PAGE
    ========================================================= */
 
@@ -58,8 +70,6 @@ body {
     background: var(--star-background) !important;
 
     overflow-x: hidden !important;
-
-    box-sizing: border-box !important;
 }
 
 
@@ -78,8 +88,6 @@ body {
 
     padding-left: 12px !important;
     padding-right: 12px !important;
-
-    box-sizing: border-box !important;
 }
 
 
@@ -95,8 +103,6 @@ body {
 
     padding-left: 0 !important;
     padding-right: 0 !important;
-
-    box-sizing: border-box !important;
 }
 
 
@@ -117,14 +123,11 @@ body {
     max-height: none !important;
 
     margin: 0 !important;
-
     padding: 24px !important;
 
     background: var(--star-background) !important;
 
     overflow: visible !important;
-
-    box-sizing: border-box !important;
 }
 
 
@@ -167,11 +170,6 @@ body {
     padding: 0 !important;
 
     overflow: visible !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
-
-    box-sizing: border-box !important;
 }
 
 
@@ -206,11 +204,6 @@ body {
     box-shadow: var(--star-shadow) !important;
 
     overflow: hidden !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
-
-    box-sizing: border-box !important;
 
     transition:
         transform 0.2s ease,
@@ -249,15 +242,9 @@ body {
     min-height: 155px !important;
 
     margin: 0 !important;
-
     padding: 24px !important;
 
     overflow: hidden !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
-
-    box-sizing: border-box !important;
 }
 
 
@@ -271,7 +258,6 @@ body {
     position: static !important;
 
     width: 100% !important;
-    max-width: 100% !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -281,8 +267,6 @@ body {
     border: 0 !important;
 
     box-shadow: none !important;
-
-    box-sizing: border-box !important;
 }
 
 
@@ -294,7 +278,6 @@ body {
     display: block !important;
 
     width: 100% !important;
-    max-width: 100% !important;
 
     margin: 0 0 10px 0 !important;
     padding: 0 !important;
@@ -331,8 +314,6 @@ body {
 
     text-decoration: none !important;
     text-shadow: none !important;
-
-    transition: color 0.2s ease !important;
 }
 
 
@@ -377,7 +358,6 @@ body {
     position: static !important;
 
     float: none !important;
-
     clear: none !important;
 
     gap: 7px !important;
@@ -391,9 +371,7 @@ body {
 
     margin: auto 0 0 0 !important;
 
-    padding:
-        10px
-        16px !important;
+    padding: 10px 16px !important;
 
     background: var(--star-navy) !important;
     background-color: var(--star-navy) !important;
@@ -414,21 +392,12 @@ body {
 
     white-space: normal !important;
 
-    overflow-wrap: anywhere !important;
-
     text-align: center !important;
 
     text-decoration: none !important;
     text-shadow: none !important;
 
-    text-indent: 0 !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
-
     cursor: pointer !important;
-
-    box-sizing: border-box !important;
 
     overflow: hidden !important;
 
@@ -464,8 +433,6 @@ body {
     line-height: 1 !important;
 
     flex: 0 0 auto !important;
-
-    transition: transform 0.2s ease !important;
 }
 
 
@@ -475,7 +442,6 @@ body {
 #rightSidebarLeftContent article.post.medium a.button.color:focus {
     background: var(--star-coral) !important;
     background-color: var(--star-coral) !important;
-    background-image: none !important;
 
     border-color: var(--star-coral) !important;
 
@@ -488,13 +454,8 @@ body {
 }
 
 
-#rightSidebarLeftContent article.post.medium a.button.color:hover::after {
-    transform: translateX(2px);
-}
-
-
 /* =========================================================
-   REMOVE OLD ARTICLE SEPARATORS
+   REMOVE OLD ARTICLE SEPARATOR
    ========================================================= */
 
 #rightSidebarLeftContent > .line {
@@ -534,8 +495,6 @@ body {
 
     margin: 10px 0 0 0 !important;
     padding: 8px 0 0 0 !important;
-
-    box-sizing: border-box !important;
 }
 
 
@@ -584,17 +543,12 @@ body {
     border: 1px solid var(--star-border) !important;
     border-radius: 8px !important;
 
-    box-shadow:
-        0 2px 5px rgba(16, 47, 69, 0.06) !important;
-
     font-size: 14px !important;
     font-weight: 700 !important;
 
     line-height: 1 !important;
 
     text-decoration: none !important;
-
-    box-sizing: border-box !important;
 }
 
 
@@ -632,12 +586,9 @@ body {
     min-width: 0 !important;
 
     height: auto !important;
-    min-height: 0 !important;
 
     margin: 0 !important;
     padding: 0 !important;
-
-    box-sizing: border-box !important;
 }
 
 
@@ -662,8 +613,6 @@ body {
 
     box-shadow: var(--star-shadow) !important;
 
-    box-sizing: border-box !important;
-
     overflow: hidden !important;
 }
 
@@ -679,12 +628,8 @@ body {
     max-width: 100% !important;
 
     margin: 0 !important;
-
-    box-sizing: border-box !important;
 }
 
-
-/* Search headings */
 
 #rightSidebar .widget-search h4 {
     display: block !important;
@@ -701,7 +646,7 @@ body {
 }
 
 
-/* Clear filters */
+/* Clear Filters */
 
 #rightSidebar .widget-search h4 a {
     color: var(--star-coral-dark) !important;
@@ -732,11 +677,7 @@ body {
 
     margin: 0 !important;
 
-    padding:
-        10px
-        44px
-        10px
-        12px !important;
+    padding: 10px 44px 10px 12px !important;
 
     background: var(--star-background-light) !important;
 
@@ -748,8 +689,6 @@ body {
     box-shadow: none !important;
 
     font-size: 14px !important;
-
-    box-sizing: border-box !important;
 }
 
 
@@ -783,8 +722,6 @@ body {
     background-color: var(--star-navy) !important;
 
     border-radius: 0 8px 8px 0 !important;
-
-    box-sizing: border-box !important;
 }
 
 
@@ -799,17 +736,6 @@ body {
 
 @media screen and (max-width: 800px),
        screen and (max-device-width: 800px) {
-
-    html,
-    body,
-    #wrapper,
-    #content {
-        width: 100% !important;
-        max-width: 100% !important;
-
-        overflow-x: hidden !important;
-    }
-
 
     #content > .container.floated {
         float: none !important;
@@ -826,9 +752,6 @@ body {
 
     #RightSidebarLayout {
         width: 100% !important;
-        max-width: 100% !important;
-
-        margin: 0 !important;
 
         padding: 16px !important;
     }
@@ -838,7 +761,6 @@ body {
         float: none !important;
 
         width: 100% !important;
-        max-width: 100% !important;
 
         grid-template-columns:
             repeat(2, minmax(0, 1fr)) !important;
@@ -851,7 +773,6 @@ body {
         float: none !important;
 
         width: 100% !important;
-        max-width: 100% !important;
 
         margin: 18px 0 0 0 !important;
     }
@@ -866,13 +787,34 @@ body {
 @media screen and (max-width: 600px),
        screen and (max-device-width: 600px) {
 
+    /*
+       Reset every old RAMCO sizing layer.
+    */
+
+    html,
+    body,
+    #wrapper,
+    #content,
+    #content > .container.floated,
+    #content > .container.floated .grid,
+    #content > .container.floated .row,
+    #updatePanel,
+    #formPanel,
+    #RightSidebarLayout,
+    #rightSidebarLeftContent,
+    #rightSidebarRightContent {
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+
     html,
     body,
     #wrapper,
     #content {
         width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
 
         margin-left: 0 !important;
         margin-right: 0 !important;
@@ -881,21 +823,23 @@ body {
     }
 
 
+    /* Main container */
+
     #content > .container.floated {
         float: none !important;
 
+        position: static !important;
+
         width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
 
         margin: 0 !important;
 
-        padding-left: 4px !important;
-        padding-right: 4px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        transform: none !important;
 
         overflow-x: hidden !important;
-
-        box-sizing: border-box !important;
     }
 
 
@@ -903,39 +847,58 @@ body {
     #content > .container.floated .row,
     #updatePanel,
     #formPanel {
+        float: none !important;
+
+        position: static !important;
+
         width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
 
         margin: 0 !important;
         padding: 0 !important;
 
-        box-sizing: border-box !important;
-    }
-
-
-    #RightSidebarLayout {
-        display: block !important;
-
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-
-        margin: 0 !important;
-
-        padding: 12px !important;
-
-        overflow-x: hidden !important;
-
-        box-sizing: border-box !important;
+        transform: none !important;
     }
 
 
     /* =====================================================
-       RECORD AREA
+       MOBILE PAGE CONTENT
        ===================================================== */
 
-    #rightSidebarLeftContent {
+    #RightSidebarLayout {
+        display: block !important;
+
+        position: static !important;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        /*
+           Creates guaranteed space between cards
+           and both sides of the phone viewport.
+        */
+        padding:
+            14px
+            12px
+            18px
+            12px !important;
+
+        overflow-x: hidden !important;
+
+        transform: none !important;
+    }
+
+
+    /* =====================================================
+       MOBILE RECORD COLUMN
+
+       Explicitly reset old "twelve floated" styles.
+       ===================================================== */
+
+    #rightSidebarLeftContent,
+    #rightSidebarLeftContent.twelve,
+    #rightSidebarLeftContent.floated,
+    #rightSidebarLeftContent.twelve.floated {
         display: grid !important;
 
         grid-template-columns:
@@ -944,27 +907,38 @@ body {
         grid-auto-columns:
             minmax(0, 1fr) !important;
 
-        gap: 14px !important;
+        gap: 12px !important;
 
         float: none !important;
+        clear: both !important;
+
+        position: static !important;
+
+        left: auto !important;
+        right: auto !important;
 
         width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
 
         height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
 
-        margin: 0 !important;
+        margin:
+            0
+            auto !important;
+
         padding: 0 !important;
 
-        overflow: visible !important;
+        transform: none !important;
 
-        box-sizing: border-box !important;
+        overflow: visible !important;
     }
 
 
     /* =====================================================
-       MOBILE CARD
+       MOBILE CARDS
+
+       Leave a tiny inset inside the content area.
        ===================================================== */
 
     #rightSidebarLeftContent article.post.medium {
@@ -974,43 +948,62 @@ body {
 
         float: none !important;
 
-        width: 100% !important;
-        max-width: 100% !important;
+        position: static !important;
+
+        left: auto !important;
+        right: auto !important;
+
+        /*
+           Important:
+           use calc() instead of plain 100%.
+           This guarantees visual breathing room.
+        */
+        width: calc(100% - 8px) !important;
+        max-width: calc(100% - 8px) !important;
         min-width: 0 !important;
 
         height: auto !important;
         min-height: 0 !important;
 
-        margin: 0 !important;
+        margin:
+            0
+            4px !important;
+
+        padding: 0 !important;
 
         border-radius: 12px !important;
 
-        overflow: hidden !important;
+        transform: none;
 
-        box-sizing: border-box !important;
+        overflow: hidden !important;
     }
 
 
     #rightSidebarLeftContent article.post.medium .medium-content {
         width: 100% !important;
         max-width: 100% !important;
-        min-width: 0 !important;
 
         height: auto !important;
         min-height: 0 !important;
 
+        margin: 0 !important;
+
         padding: 18px !important;
 
         overflow: hidden !important;
-
-        box-sizing: border-box !important;
     }
 
 
+    /* Title */
+
     #rightSidebarLeftContent article.post.medium h2 {
+        margin-bottom: 8px !important;
+
         font-size: 18px !important;
     }
 
+
+    /* Date */
 
     #rightSidebarLeftContent article.post.medium .medium-content > p {
         margin-bottom: 16px !important;
@@ -1021,10 +1014,6 @@ body {
 
     /* =====================================================
        MOBILE BUTTON
-
-       IMPORTANT:
-       Do NOT make this width:100%.
-       RAMCO's legacy button styling causes overflow.
        ===================================================== */
 
     #rightSidebarLeftContent article.post.medium a.button.color {
@@ -1057,17 +1046,12 @@ body {
 
         overflow: hidden !important;
 
-        box-sizing: border-box !important;
-    }
-
-
-    #rightSidebarLeftContent article.post.medium a.button.color::after {
-        flex: 0 0 auto !important;
+        transform: none;
     }
 
 
     /* =====================================================
-       PAGINATION
+       MOBILE PAGINATION
        ===================================================== */
 
     #RightSidebarLeftContentPlaceHolder_queryList_PageFilter_ClearFix,
@@ -1082,43 +1066,54 @@ body {
 
     #rightSidebarLeftContent .pagination ul {
         justify-content: flex-start !important;
-    }
 
-
-    #rightSidebarLeftContent .pagination ul li a {
-        min-width: 38px !important;
-        height: 38px !important;
+        padding-left: 4px !important;
     }
 
 
     /* =====================================================
-       SEARCH
+       MOBILE SEARCH
        ===================================================== */
 
-    #rightSidebarRightContent {
+    #rightSidebarRightContent,
+    #rightSidebarRightContent.four,
+    #rightSidebarRightContent.floated,
+    #rightSidebarRightContent.four.floated {
         display: block !important;
 
         float: none !important;
+        clear: both !important;
+
+        position: static !important;
+
+        left: auto !important;
+        right: auto !important;
 
         width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
 
-        margin: 16px 0 0 0 !important;
+        margin:
+            16px
+            0
+            0
+            0 !important;
 
-        box-sizing: border-box !important;
+        padding: 0 !important;
+
+        transform: none !important;
     }
 
 
     #rightSidebar {
-        width: 100% !important;
-        max-width: 100% !important;
+        width: calc(100% - 8px) !important;
+        max-width: calc(100% - 8px) !important;
+
+        margin:
+            0
+            4px !important;
 
         padding: 16px !important;
 
         border-radius: 12px !important;
-
-        box-sizing: border-box !important;
     }
 
 }
@@ -1132,12 +1127,26 @@ body {
        screen and (max-device-width: 380px) {
 
     #RightSidebarLayout {
-        padding: 8px !important;
+        padding:
+            10px
+            8px
+            16px
+            8px !important;
     }
 
 
     #rightSidebarLeftContent {
-        gap: 12px !important;
+        gap: 10px !important;
+    }
+
+
+    #rightSidebarLeftContent article.post.medium {
+        width: calc(100% - 6px) !important;
+        max-width: calc(100% - 6px) !important;
+
+        margin:
+            0
+            3px !important;
     }
 
 
@@ -1161,6 +1170,13 @@ body {
 
 
     #rightSidebar {
+        width: calc(100% - 6px) !important;
+        max-width: calc(100% - 6px) !important;
+
+        margin:
+            0
+            3px !important;
+
         padding: 14px !important;
     }
 
