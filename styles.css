@@ -1,1 +1,497 @@
 
+/* =========================================================
+   STAR ARTICLE / NEWS CARDS
+   Suncoast Tampa Association of REALTORS®
+   ========================================================= */
+
+:root {
+    --star-navy: #173f59;
+    --star-navy-dark: #102f45;
+    --star-coral: #f36570;
+    --star-coral-dark: #dc515d;
+
+    --star-white: #ffffff;
+    --star-background: #f5f7f8;
+    --star-text: #333333;
+    --star-muted: #687681;
+    --star-border: #e4e9ec;
+
+    --star-radius: 14px;
+    --star-shadow: 0 5px 20px rgba(17, 47, 69, 0.08);
+    --star-shadow-hover: 0 12px 30px rgba(17, 47, 69, 0.15);
+}
+
+
+/* =========================================================
+   ARTICLE CARDS
+   ========================================================= */
+
+main article,
+.site-main article,
+.star-article-card {
+    background: var(--star-white);
+    border: 1px solid var(--star-border);
+    border-radius: var(--star-radius);
+    box-shadow: var(--star-shadow);
+    overflow: hidden;
+    margin-bottom: 28px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Slight interaction on desktop */
+@media (hover: hover) {
+    main article:hover,
+    .site-main article:hover,
+    .star-article-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--star-shadow-hover);
+        border-color: rgba(23, 63, 89, 0.18);
+    }
+}
+
+
+/* =========================================================
+   ARTICLE CONTENT / PADDING
+   ========================================================= */
+
+/*
+   Covers common WordPress/article structures.
+*/
+
+main article .entry-content,
+main article .entry-summary,
+main article .article-content,
+main article .post-content,
+main article .content,
+
+.site-main article .entry-content,
+.site-main article .entry-summary,
+.site-main article .article-content,
+.site-main article .post-content,
+.site-main article .content,
+
+.star-article-card .article-content {
+    padding: 28px 30px;
+}
+
+
+/*
+   If the article does NOT contain one of the wrappers above,
+   you can place padding directly on the article with:
+
+   class="star-article-card star-card-padding"
+*/
+
+.star-card-padding {
+    padding: 28px 30px;
+}
+
+
+/* =========================================================
+   FEATURED IMAGES
+   ========================================================= */
+
+main article > img,
+main article .post-thumbnail img,
+main article .featured-image img,
+main article .wp-post-image,
+
+.site-main article > img,
+.site-main article .post-thumbnail img,
+.site-main article .featured-image img,
+.site-main article .wp-post-image,
+
+.star-article-card > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 340px;
+    object-fit: cover;
+    margin: 0;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+main article h1,
+main article h2,
+main article h3,
+
+.site-main article h1,
+.site-main article h2,
+.site-main article h3,
+
+.star-article-card h1,
+.star-article-card h2,
+.star-article-card h3 {
+    color: var(--star-navy);
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+
+main article h2,
+.site-main article h2,
+.star-article-card h2 {
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+
+main article h3,
+.site-main article h3,
+.star-article-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+
+/* Title links */
+main article h1 a,
+main article h2 a,
+main article h3 a,
+
+.site-main article h1 a,
+.site-main article h2 a,
+.site-main article h3 a,
+
+.star-article-card h1 a,
+.star-article-card h2 a,
+.star-article-card h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+
+main article h1 a:hover,
+main article h2 a:hover,
+main article h3 a:hover,
+
+.site-main article h1 a:hover,
+.site-main article h2 a:hover,
+.site-main article h3 a:hover,
+
+.star-article-card h1 a:hover,
+.star-article-card h2 a:hover,
+.star-article-card h3 a:hover {
+    color: var(--star-coral);
+}
+
+
+/* =========================================================
+   ARTICLE TEXT
+   ========================================================= */
+
+main article p,
+.site-main article p,
+.star-article-card p {
+    color: var(--star-text);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+
+main article p:last-child,
+.site-main article p:last-child,
+.star-article-card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   ARTICLE META
+   Date / author / category
+   ========================================================= */
+
+main article .entry-meta,
+main article .post-meta,
+main article .article-meta,
+
+.site-main article .entry-meta,
+.site-main article .post-meta,
+.site-main article .article-meta,
+
+.star-article-card .entry-meta,
+.star-article-card .post-meta {
+    color: var(--star-muted);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+
+main article .entry-meta a,
+main article .post-meta a,
+
+.site-main article .entry-meta a,
+.site-main article .post-meta a,
+
+.star-article-card .entry-meta a,
+.star-article-card .post-meta a {
+    color: var(--star-coral);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   ARTICLE LINKS
+   ========================================================= */
+
+main article a,
+.site-main article a,
+.star-article-card a {
+    color: var(--star-navy);
+}
+
+
+main article p a,
+.site-main article p a,
+.star-article-card p a {
+    color: var(--star-coral-dark);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+
+/* =========================================================
+   READ MORE / BUTTONS
+   ========================================================= */
+
+main article .read-more,
+main article .more-link,
+main article .wp-block-button__link,
+
+.site-main article .read-more,
+.site-main article .more-link,
+.site-main article .wp-block-button__link,
+
+.star-article-card .read-more,
+.star-article-card .more-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+    padding: 10px 20px;
+
+    background: var(--star-navy);
+    color: var(--star-white);
+
+    border: 0;
+    border-radius: 6px;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+main article .read-more:hover,
+main article .more-link:hover,
+main article .wp-block-button__link:hover,
+
+.site-main article .read-more:hover,
+.site-main article .more-link:hover,
+.site-main article .wp-block-button__link:hover,
+
+.star-article-card .read-more:hover,
+.star-article-card .more-link:hover {
+    background: var(--star-coral);
+    color: var(--star-white);
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CATEGORY / ARTICLE TAGS
+   ========================================================= */
+
+main article .cat-links a,
+main article .category a,
+main article .post-category a,
+
+.site-main article .cat-links a,
+.site-main article .category a,
+.site-main article .post-category a,
+
+.star-article-card .category {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 11px;
+    margin-bottom: 12px;
+
+    background: rgba(243, 101, 112, 0.10);
+    color: var(--star-coral-dark);
+
+    border-radius: 999px;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   LISTS INSIDE ARTICLES
+   ========================================================= */
+
+main article ul,
+main article ol,
+.site-main article ul,
+.site-main article ol,
+.star-article-card ul,
+.star-article-card ol {
+    margin: 0 0 18px 0;
+    padding-left: 22px;
+    color: var(--star-text);
+}
+
+
+main article li,
+.site-main article li,
+.star-article-card li {
+    margin-bottom: 8px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   OPTIONAL ARTICLE GRID
+   Add class="star-article-grid" around your articles
+   ========================================================= */
+
+.star-article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+}
+
+
+.star-article-grid > article,
+.star-article-grid > .star-article-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+
+.star-article-grid .entry-content,
+.star-article-grid .entry-summary,
+.star-article-grid .article-content,
+.star-article-grid .post-content {
+    flex: 1;
+}
+
+
+/* =========================================================
+   TWO-COLUMN LAYOUT
+   ========================================================= */
+
+.star-article-grid.two-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    .star-article-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .star-article-grid,
+    .star-article-grid.two-columns {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+
+    main article,
+    .site-main article,
+    .star-article-card {
+        border-radius: 10px;
+        margin-bottom: 18px;
+    }
+
+
+    main article .entry-content,
+    main article .entry-summary,
+    main article .article-content,
+    main article .post-content,
+    main article .content,
+
+    .site-main article .entry-content,
+    .site-main article .entry-summary,
+    .site-main article .article-content,
+    .site-main article .post-content,
+    .site-main article .content,
+
+    .star-article-card .article-content,
+    .star-card-padding {
+        padding: 20px;
+    }
+
+
+    main article > img,
+    main article .post-thumbnail img,
+    main article .featured-image img,
+    main article .wp-post-image,
+
+    .site-main article > img,
+    .site-main article .post-thumbnail img,
+    .site-main article .featured-image img,
+    .site-main article .wp-post-image,
+
+    .star-article-card > img {
+        max-height: 240px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+main article a:focus-visible,
+.site-main article a:focus-visible,
+.star-article-card a:focus-visible {
+    outline: 3px solid var(--star-coral);
+    outline-offset: 3px;
+}
