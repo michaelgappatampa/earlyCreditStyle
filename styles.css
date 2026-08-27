@@ -624,3 +624,104 @@
     }
 
 }
+/* =========================================================
+   ARTICLE CARD GRID
+   2 columns desktop / 1 column mobile
+   ========================================================= */
+
+#rightSidebarLeftContent {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px !important;
+
+    align-items: stretch !important;
+}
+
+
+/* Each article becomes a grid card */
+
+#rightSidebarLeftContent article.post.medium {
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* Make card contents stretch vertically */
+
+#rightSidebarLeftContent article.post.medium .medium-content {
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* Push button toward bottom for equal-looking cards */
+
+#rightSidebarLeftContent article.post.medium a.button.color {
+    align-self: flex-start !important;
+
+    margin-top: auto !important;
+}
+
+
+/* Old separator lines are no longer needed */
+
+#rightSidebarLeftContent > .line {
+    display: none !important;
+}
+
+
+/* =========================================================
+   PAGINATION
+   Keep pagination underneath BOTH columns
+   ========================================================= */
+
+#rightSidebarLeftContent .pagination {
+    grid-column: 1 / -1 !important;
+
+    width: 100% !important;
+
+    margin-top: 20px !important;
+}
+
+
+/* RAMCO clearfix before pagination */
+
+#rightSidebarLeftContent
+[id$="_PageFilter_ClearFix"] {
+    grid-column: 1 / -1 !important;
+
+    width: 100% !important;
+    height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   Stack cards into a single column
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    #rightSidebarLeftContent {
+        grid-template-columns: 1fr !important;
+
+        gap: 16px !important;
+    }
+
+}
