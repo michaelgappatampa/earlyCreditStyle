@@ -1018,3 +1018,82 @@ body {
     }
 
 }
+
+/* =========================================================
+   FIX RAMCO RECORD CONTAINER HEIGHT
+   ========================================================= */
+
+#RightSidebarLayout,
+#rightSidebarLeftContent {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+}
+
+
+/* Make sure records are never clipped */
+
+#rightSidebarLeftContent {
+    overflow: visible !important;
+}
+
+
+/* Make sure individual records remain visible */
+
+#rightSidebarLeftContent article.post.medium {
+    display: flex !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    height: auto !important;
+    min-height: 140px !important;
+
+    overflow: visible !important;
+}
+
+
+/* Keep card contents visible */
+
+#rightSidebarLeftContent article.post.medium .medium-content {
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    height: auto !important;
+    min-height: 140px !important;
+}
+
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+#RightSidebarLeftContentPlaceHolder_queryList_PageFilter_ClearFix {
+    display: block !important;
+
+    grid-column: 1 / -1 !important;
+
+    clear: both !important;
+
+    width: 100% !important;
+    height: 0 !important;
+}
+
+
+#rightSidebarLeftContent .pagination,
+#RightSidebarLeftContentPlaceHolder_queryList_PageFilter_PageFilter {
+    display: block !important;
+
+    grid-column: 1 / -1 !important;
+
+    width: 100% !important;
+
+    margin-top: 18px !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+}
