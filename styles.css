@@ -1,64 +1,190 @@
 /* =========================================================
    SUNCOAST TAMPA ASSOCIATION OF REALTORS
-   CREDIT / EDUCATION ARTICLE CARDS
+   CREDIT / EDUCATION WEB ELEMENT
+
+   Clean consolidated stylesheet
+   ========================================================= */
+
+
+/* =========================================================
+   BRAND VARIABLES
    ========================================================= */
 
 :root {
     --star-navy: #173f59;
     --star-navy-dark: #102f45;
+
     --star-coral: #f36570;
     --star-coral-dark: #dc515d;
 
     --star-white: #ffffff;
-    --star-background: #f5f7f8;
-    --star-text: #333333;
+
+    --star-background: #f1f5f7;
+    --star-background-light: #f7f9fa;
+
+    --star-text: #293a44;
     --star-muted: #687681;
-    --star-border: #e4e9ec;
+
+    --star-border: #dce5e9;
+    --star-border-dark: #cad7dd;
 
     --star-radius: 14px;
 
     --star-shadow:
-        0 4px 12px rgba(17, 47, 69, 0.07),
-        0 1px 3px rgba(17, 47, 69, 0.05);
+        0 3px 10px rgba(16, 47, 69, 0.06),
+        0 1px 3px rgba(16, 47, 69, 0.04);
 
     --star-shadow-hover:
-        0 12px 28px rgba(17, 47, 69, 0.13),
-        0 3px 8px rgba(17, 47, 69, 0.06);
+        0 10px 24px rgba(16, 47, 69, 0.11),
+        0 2px 5px rgba(16, 47, 69, 0.06);
 }
 
 
 /* =========================================================
-   PAGE
+   GENERAL
    ========================================================= */
 
+html,
+body {
+    overflow-x: hidden !important;
+}
+
+
 #content {
-    background: var(--star-background);
+    background: var(--star-background) !important;
 }
 
 
 /* =========================================================
-   MAIN CONTENT COLUMN
+   RAMCO CONTAINER
+
+   Removes the old fixed-width Nevia layout and allows
+   the web element to expand with the available screen.
+   ========================================================= */
+
+.container.floated {
+    float: none !important;
+
+    width: calc(100% - 32px) !important;
+    max-width: 1440px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* Remove old fixed-width restrictions */
+
+.container.floated .grid,
+.container.floated .row,
+#updatePanel,
+#formPanel {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   MAIN CONTENT LAYOUT
+
+   Desktop:
+   [ Article Cards                   ] [ Search ]
+
+   ========================================================= */
+
+#RightSidebarLayout {
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(220px, 270px);
+
+    align-items: start !important;
+
+    gap: 24px !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding: 28px !important;
+
+    background: var(--star-background) !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   LEFT ARTICLE AREA
+
+   Two cards per row on desktop.
    ========================================================= */
 
 #rightSidebarLeftContent {
-    box-sizing: border-box;
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    align-items: stretch !important;
+
+    gap: 20px !important;
+
+    float: none !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    /*
+       RAMCO adds an inline height to this element.
+       !important overrides it.
+    */
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: visible !important;
+
+    box-sizing: border-box !important;
 }
 
 
 /* =========================================================
    ARTICLE CARD
-   Actual RAMCO markup:
-   <article class="post medium">
    ========================================================= */
 
 #rightSidebarLeftContent article.post.medium {
-    display: block !important;
+    display: flex !important;
+
+    flex-direction: column !important;
+
     float: none !important;
 
     width: 100% !important;
     max-width: none !important;
+    min-width: 0 !important;
 
-    margin: 0 0 22px 0 !important;
+    height: 100% !important;
+
+    margin: 0 !important;
     padding: 0 !important;
 
     background: var(--star-white) !important;
@@ -75,16 +201,18 @@
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
-        border-color 0.2s ease;
+        border-color 0.2s ease !important;
 }
 
+
+/* Card hover */
 
 @media (hover: hover) {
 
     #rightSidebarLeftContent article.post.medium:hover {
         transform: translateY(-3px);
 
-        border-color: rgba(23, 63, 89, 0.2) !important;
+        border-color: rgba(23, 63, 89, 0.20) !important;
 
         box-shadow: var(--star-shadow-hover) !important;
     }
@@ -97,21 +225,26 @@
    ========================================================= */
 
 #rightSidebarLeftContent article.post.medium .medium-content {
-    display: block !important;
-    float: none !important;
+    display: flex !important;
+
+    flex-direction: column !important;
 
     width: 100% !important;
     max-width: none !important;
+    min-width: 0 !important;
+
+    height: 100% !important;
 
     margin: 0 !important;
-    padding: 26px 28px !important;
+
+    padding: 26px !important;
 
     box-sizing: border-box !important;
 }
 
 
 /* =========================================================
-   HEADER / META
+   ARTICLE HEADER
    ========================================================= */
 
 #rightSidebarLeftContent article.post.medium header.meta {
@@ -119,12 +252,13 @@
 
     width: 100% !important;
 
-    margin: 0 0 8px 0 !important;
+    margin: 0 !important;
     padding: 0 !important;
 
     background: transparent !important;
 
     border: 0 !important;
+
     box-shadow: none !important;
 
     box-sizing: border-box !important;
@@ -135,16 +269,15 @@
    ARTICLE TITLE
    ========================================================= */
 
-#rightSidebarLeftContent article.post.medium header.meta h2,
 #rightSidebarLeftContent article.post.medium h2 {
     display: block !important;
 
-    margin: 0 0 8px 0 !important;
+    margin: 0 0 10px 0 !important;
     padding: 0 !important;
 
     color: var(--star-navy) !important;
 
-    font-size: 22px !important;
+    font-size: 21px !important;
     font-weight: 700 !important;
 
     line-height: 1.25 !important;
@@ -153,9 +286,6 @@
 }
 
 
-/* Title link */
-
-#rightSidebarLeftContent article.post.medium header.meta h2 a,
 #rightSidebarLeftContent article.post.medium h2 a {
     display: inline !important;
 
@@ -176,24 +306,23 @@
     text-decoration: none !important;
     text-shadow: none !important;
 
-    transition: color 0.2s ease;
+    transition: color 0.2s ease !important;
 }
 
 
-#rightSidebarLeftContent article.post.medium header.meta h2 a:hover,
 #rightSidebarLeftContent article.post.medium h2 a:hover {
     color: var(--star-coral) !important;
 }
 
 
 /* =========================================================
-   DATE / ARTICLE TEXT
+   DATE
    ========================================================= */
 
 #rightSidebarLeftContent article.post.medium .medium-content > p {
     display: block !important;
 
-    margin: 0 0 18px 0 !important;
+    margin: 0 0 22px 0 !important;
     padding: 0 !important;
 
     color: var(--star-muted) !important;
@@ -215,12 +344,21 @@
     align-items: center !important;
     justify-content: center !important;
 
-    width: auto !important;
-    min-width: 0 !important;
-    min-height: 42px !important;
+    align-self: flex-start !important;
 
-    margin: 0 !important;
-    padding: 10px 18px !important;
+    gap: 8px !important;
+
+    width: auto !important;
+
+    min-width: 0 !important;
+    min-height: 44px !important;
+
+    /*
+       Pushes buttons to the bottom when title lengths vary.
+    */
+    margin: auto 0 0 0 !important;
+
+    padding: 11px 18px !important;
 
     background: var(--star-navy) !important;
     background-color: var(--star-navy) !important;
@@ -228,10 +366,11 @@
 
     color: var(--star-white) !important;
 
-    border: 0 !important;
-    border-radius: 7px !important;
+    border: 1px solid var(--star-navy) !important;
+    border-radius: 9px !important;
 
-    box-shadow: none !important;
+    box-shadow:
+        0 2px 5px rgba(16, 47, 69, 0.14) !important;
 
     font-size: 14px !important;
     font-weight: 700 !important;
@@ -239,19 +378,37 @@
     line-height: 1.2 !important;
 
     text-align: center !important;
+
     text-decoration: none !important;
     text-shadow: none !important;
 
-    box-sizing: border-box !important;
-
     cursor: pointer !important;
+
+    box-sizing: border-box !important;
 
     transition:
         background-color 0.2s ease,
+        border-color 0.2s ease,
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease !important;
 }
 
+
+/* Add arrow */
+
+#rightSidebarLeftContent article.post.medium a.button.color::after {
+    content: "\2192";
+
+    display: inline-block;
+
+    font-size: 16px;
+    line-height: 1;
+
+    transition: transform 0.2s ease;
+}
+
+
+/* Button hover */
 
 #rightSidebarLeftContent article.post.medium a.button.color:hover,
 #rightSidebarLeftContent article.post.medium a.button.color:focus {
@@ -259,17 +416,24 @@
     background-color: var(--star-coral) !important;
     background-image: none !important;
 
+    border-color: var(--star-coral) !important;
+
     color: var(--star-white) !important;
 
     transform: translateY(-1px);
 
     box-shadow:
-        0 4px 10px rgba(17, 47, 69, 0.16) !important;
+        0 5px 12px rgba(16, 47, 69, 0.18) !important;
+}
+
+
+#rightSidebarLeftContent article.post.medium a.button.color:hover::after {
+    transform: translateX(3px);
 }
 
 
 /* =========================================================
-   REMOVE OLD LINES BETWEEN ARTICLES
+   REMOVE OLD ARTICLE SEPARATOR LINES
    ========================================================= */
 
 #rightSidebarLeftContent > .line {
@@ -278,34 +442,86 @@
 
 
 /* =========================================================
-   SIDEBAR
+   REMOVE PAGINATION
+
+   Removes the "1" page number completely.
    ========================================================= */
 
-#rightSidebarRightContent {
-    box-sizing: border-box;
-}
-
-
-#rightSidebar {
-    background: var(--star-white);
-
-    border: 1px solid var(--star-border);
-    border-radius: var(--star-radius);
-
-    box-shadow: var(--star-shadow);
-
-    padding: 22px;
-
-    box-sizing: border-box;
+#rightSidebarLeftContent .pagination,
+#RightSidebarLeftContentPlaceHolder_queryList_PageFilter_PageFilter,
+#RightSidebarLeftContentPlaceHolder_queryList_PageFilter_ClearFix {
+    display: none !important;
 }
 
 
 /* =========================================================
-   FILTER / SEARCH HEADINGS
+   RIGHT SEARCH COLUMN
+   ========================================================= */
+
+#rightSidebarRightContent {
+    display: block !important;
+
+    float: none !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   SEARCH CARD
+   ========================================================= */
+
+#rightSidebar {
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    padding: 22px !important;
+
+    background: var(--star-white) !important;
+
+    border: 1px solid var(--star-border) !important;
+    border-radius: var(--star-radius) !important;
+
+    box-shadow: var(--star-shadow) !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   SEARCH FILTER CONTAINER
+   ========================================================= */
+
+#rightSidebar .widget-search {
+    position: relative !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   SEARCH HEADINGS
    ========================================================= */
 
 #rightSidebar .widget-search h4 {
+    display: block !important;
+
     margin: 0 0 10px 0 !important;
+    padding: 0 !important;
 
     color: var(--star-navy) !important;
 
@@ -325,6 +541,8 @@
     font-weight: 600 !important;
 
     text-decoration: none !important;
+
+    transition: color 0.2s ease !important;
 }
 
 
@@ -334,22 +552,29 @@
 
 
 /* =========================================================
-   SEARCH FIELD
+   SEARCH INPUT
    ========================================================= */
 
 #rightSidebar .search-field {
+    display: block !important;
+
     width: 100% !important;
-    height: 44px !important;
+    height: 46px !important;
 
     margin: 0 !important;
-    padding: 10px 44px 10px 14px !important;
 
-    background: var(--star-white) !important;
+    padding:
+        10px
+        48px
+        10px
+        14px !important;
+
+    background: var(--star-background-light) !important;
 
     color: var(--star-text) !important;
 
-    border: 1px solid var(--star-border) !important;
-    border-radius: 7px !important;
+    border: 1px solid var(--star-border-dark) !important;
+    border-radius: 9px !important;
 
     box-shadow: none !important;
 
@@ -358,16 +583,19 @@
     box-sizing: border-box !important;
 
     transition:
+        background-color 0.2s ease,
         border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease !important;
 }
 
 
 #rightSidebar .search-field:focus {
+    background: var(--star-white) !important;
+
     border-color: var(--star-navy) !important;
 
     box-shadow:
-        0 0 0 3px rgba(23, 63, 89, 0.1) !important;
+        0 0 0 3px rgba(23, 63, 89, 0.10) !important;
 
     outline: none !important;
 }
@@ -380,9 +608,10 @@
 #rightSidebar .search-btn-widget {
     background-color: var(--star-navy) !important;
 
-    border-radius: 0 7px 7px 0 !important;
+    border-radius: 0 8px 8px 0 !important;
 
-    transition: background-color 0.2s ease;
+    transition:
+        background-color 0.2s ease !important;
 }
 
 
@@ -392,101 +621,44 @@
 
 
 /* =========================================================
-   PAGINATION
-   ========================================================= */
-
-#rightSidebarLeftContent .pagination {
-    display: block;
-
-    margin: 28px 0 10px 0 !important;
-    padding: 0 !important;
-}
-
-
-#rightSidebarLeftContent .pagination ul {
-    display: flex !important;
-
-    align-items: center !important;
-
-    gap: 6px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    list-style: none !important;
-}
-
-
-#rightSidebarLeftContent .pagination ul li {
-    display: block !important;
-
-    float: none !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-
-#rightSidebarLeftContent .pagination ul li a {
-    display: inline-flex !important;
-
-    align-items: center !important;
-    justify-content: center !important;
-
-    min-width: 38px !important;
-    height: 38px !important;
-
-    margin: 0 !important;
-    padding: 0 10px !important;
-
-    background: var(--star-white) !important;
-
-    color: var(--star-navy) !important;
-
-    border: 1px solid var(--star-border) !important;
-    border-radius: 6px !important;
-
-    box-shadow: none !important;
-
-    font-size: 14px !important;
-    font-weight: 600 !important;
-
-    text-decoration: none !important;
-
-    box-sizing: border-box !important;
-
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
-}
-
-
-#rightSidebarLeftContent .pagination ul li a:hover,
-#rightSidebarLeftContent .pagination ul li a.current {
-    background: var(--star-navy) !important;
-
-    color: var(--star-white) !important;
-
-    border-color: var(--star-navy) !important;
-}
-
-
-/* =========================================================
    TABLET
+
+   Sidebar moves below the cards.
+   Cards remain two columns.
    ========================================================= */
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 900px) {
+
+    .container.floated {
+        width: calc(100% - 20px) !important;
+
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+
+    #RightSidebarLayout {
+        grid-template-columns: 1fr !important;
+
+        gap: 20px !important;
+
+        padding: 20px !important;
+    }
+
 
     #rightSidebarLeftContent {
-        width: 100% !important;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
     }
 
 
     #rightSidebarRightContent {
         width: 100% !important;
+    }
 
-        margin-top: 24px !important;
+
+    #rightSidebar {
+        width: 100% !important;
     }
 
 }
@@ -494,92 +666,168 @@
 
 /* =========================================================
    MOBILE
+
+   One card per row.
+   Everything stays inside viewport.
    ========================================================= */
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 650px) {
 
-    #content {
-        background: var(--star-background);
-    }
-
-
-    #rightSidebarLeftContent,
-    #rightSidebarRightContent {
-        display: block !important;
+    .container.floated {
         float: none !important;
 
         width: 100% !important;
+        max-width: none !important;
 
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        margin: 0 !important;
+
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+
+    .container.floated .grid,
+    .container.floated .row,
+    #updatePanel,
+    #formPanel {
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+    }
+
+
+    #RightSidebarLayout {
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 16px !important;
+
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+
+        padding: 14px !important;
 
         box-sizing: border-box !important;
     }
 
 
-    /* Cards */
+    #rightSidebarLeftContent {
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 14px !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: visible !important;
+    }
+
 
     #rightSidebarLeftContent article.post.medium {
         width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
 
-        margin-bottom: 16px !important;
+        height: auto !important;
 
-        border-radius: 11px !important;
+        margin: 0 !important;
+
+        border-radius: 12px !important;
     }
 
 
     #rightSidebarLeftContent article.post.medium .medium-content {
+        width: 100% !important;
+
         padding: 20px !important;
     }
 
-
-    /* Title */
 
     #rightSidebarLeftContent article.post.medium h2 {
         font-size: 19px !important;
     }
 
 
-    /* Date */
-
     #rightSidebarLeftContent article.post.medium .medium-content > p {
-        margin-bottom: 16px !important;
+        margin-bottom: 18px !important;
 
         font-size: 13px !important;
     }
 
 
-    /* Button */
+    /*
+       Full-width mobile button for easier tapping
+    */
 
     #rightSidebarLeftContent article.post.medium a.button.color {
         display: flex !important;
 
+        align-self: stretch !important;
+
         width: 100% !important;
 
-        min-height: 44px !important;
+        min-height: 46px !important;
 
-        padding: 11px 16px !important;
+        padding: 12px 16px !important;
     }
 
 
-    /* Sidebar */
+    #rightSidebarRightContent {
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+    }
+
 
     #rightSidebar {
-        margin-top: 5px !important;
+        width: 100% !important;
 
-        padding: 18px !important;
+        margin: 0 !important;
 
-        border-radius: 11px !important;
+        padding: 20px !important;
+
+        border-radius: 12px !important;
     }
 
 }
 
 
 /* =========================================================
-   VERY SMALL MOBILE
+   VERY SMALL PHONES
    ========================================================= */
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 380px) {
+
+    .container.floated {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+    }
+
+
+    #RightSidebarLayout {
+        padding: 10px !important;
+    }
+
+
+    #rightSidebarLeftContent {
+        gap: 12px !important;
+    }
+
 
     #rightSidebarLeftContent article.post.medium .medium-content {
         padding: 18px !important;
@@ -590,6 +838,11 @@
         font-size: 18px !important;
     }
 
+
+    #rightSidebar {
+        padding: 18px !important;
+    }
+
 }
 
 
@@ -598,7 +851,8 @@
    ========================================================= */
 
 #rightSidebarLeftContent article.post.medium a:focus-visible,
-#rightSidebar a:focus-visible {
+#rightSidebar a:focus-visible,
+#rightSidebar input:focus-visible {
     outline: 3px solid var(--star-coral) !important;
     outline-offset: 3px !important;
 }
@@ -621,107 +875,6 @@
     #rightSidebarLeftContent article.post.medium:hover,
     #rightSidebarLeftContent article.post.medium a.button.color:hover {
         transform: none !important;
-    }
-
-}
-/* =========================================================
-   ARTICLE CARD GRID
-   2 columns desktop / 1 column mobile
-   ========================================================= */
-
-#rightSidebarLeftContent {
-    display: grid !important;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 18px !important;
-
-    align-items: stretch !important;
-}
-
-
-/* Each article becomes a grid card */
-
-#rightSidebarLeftContent article.post.medium {
-    width: 100% !important;
-    height: 100% !important;
-
-    margin: 0 !important;
-
-    box-sizing: border-box !important;
-}
-
-
-/* Make card contents stretch vertically */
-
-#rightSidebarLeftContent article.post.medium .medium-content {
-    display: flex !important;
-
-    flex-direction: column !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    box-sizing: border-box !important;
-}
-
-
-/* Push button toward bottom for equal-looking cards */
-
-#rightSidebarLeftContent article.post.medium a.button.color {
-    align-self: flex-start !important;
-
-    margin-top: auto !important;
-}
-
-
-/* Old separator lines are no longer needed */
-
-#rightSidebarLeftContent > .line {
-    display: none !important;
-}
-
-
-/* =========================================================
-   PAGINATION
-   Keep pagination underneath BOTH columns
-   ========================================================= */
-
-#rightSidebarLeftContent .pagination {
-    grid-column: 1 / -1 !important;
-
-    width: 100% !important;
-
-    margin-top: 20px !important;
-}
-
-
-/* RAMCO clearfix before pagination */
-
-#rightSidebarLeftContent
-[id$="_PageFilter_ClearFix"] {
-    grid-column: 1 / -1 !important;
-
-    width: 100% !important;
-    height: 0 !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-
-/* =========================================================
-   MOBILE
-   Stack cards into a single column
-   ========================================================= */
-
-@media screen and (max-width: 700px) {
-
-    #rightSidebarLeftContent {
-        grid-template-columns: 1fr !important;
-
-        gap: 16px !important;
     }
 
 }
