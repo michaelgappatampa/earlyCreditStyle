@@ -5,7 +5,7 @@
 
 
 /* =========================================================
-   BRAND
+   BRAND VARIABLES
    ========================================================= */
 
 :root {
@@ -39,24 +39,29 @@
 
 
 /* =========================================================
-   UNIVERSAL BOX SIZING
+   GLOBAL BOX SIZING
    ========================================================= */
 
-#content,
-#content *,
-#content *::before,
-#content *::after {
+#wrapper,
+#wrapper *,
+#wrapper *::before,
+#wrapper *::after {
     box-sizing: border-box !important;
 }
 
 
 /* =========================================================
-   PAGE
+   BASE PAGE
    ========================================================= */
 
 html,
 body {
-    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+
+#wrapper {
     max-width: 100% !important;
 
     overflow-x: hidden !important;
@@ -64,7 +69,6 @@ body {
 
 
 #content {
-    width: 100% !important;
     max-width: 100% !important;
 
     background: var(--star-background) !important;
@@ -74,7 +78,7 @@ body {
 
 
 /* =========================================================
-   MAIN RAMCO CONTAINER
+   RAMCO CONTENT CONTAINER
    ========================================================= */
 
 #content > .container.floated {
@@ -91,20 +95,26 @@ body {
 }
 
 
+/* Remove old fixed-width restrictions */
+
 #content > .container.floated .grid,
 #content > .container.floated .row,
 #updatePanel,
 #formPanel {
-    width: 100% !important;
     max-width: 100% !important;
 
-    margin: 0 !important;
-    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 
 /* =========================================================
-   RAMCO LEFT / RIGHT LAYOUT
+   MAIN RAMCO LAYOUT
+
+   Keep RAMCO's left/right desktop structure.
    ========================================================= */
 
 #RightSidebarLayout {
@@ -112,7 +122,6 @@ body {
 
     position: relative !important;
 
-    width: 100% !important;
     max-width: 100% !important;
 
     height: auto !important;
@@ -128,6 +137,8 @@ body {
 }
 
 
+/* Clear desktop floats */
+
 #RightSidebarLayout::after {
     content: "";
 
@@ -138,7 +149,7 @@ body {
 
 
 /* =========================================================
-   LEFT RECORD AREA - DESKTOP
+   LEFT RECORD COLUMN - DESKTOP
    ========================================================= */
 
 #rightSidebarLeftContent {
@@ -156,7 +167,6 @@ body {
     position: static !important;
 
     width: calc(75% - 12px) !important;
-    max-width: none !important;
     min-width: 0 !important;
 
     height: auto !important;
@@ -179,9 +189,9 @@ body {
 
     flex-direction: column !important;
 
-    position: static !important;
-
     float: none !important;
+
+    position: static !important;
 
     width: 100% !important;
     max-width: 100% !important;
@@ -208,6 +218,8 @@ body {
         border-color 0.2s ease !important;
 }
 
+
+/* Desktop hover */
 
 @media (hover: hover) {
 
@@ -254,7 +266,7 @@ body {
 
     position: static !important;
 
-    width: 100% !important;
+    width: auto !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -274,7 +286,7 @@ body {
 #rightSidebarLeftContent article.post.medium h2 {
     display: block !important;
 
-    width: 100% !important;
+    width: auto !important;
 
     margin: 0 0 10px 0 !important;
     padding: 0 !important;
@@ -326,7 +338,7 @@ body {
 #rightSidebarLeftContent article.post.medium .medium-content > p {
     display: block !important;
 
-    width: 100% !important;
+    width: auto !important;
 
     margin: 0 0 20px 0 !important;
     padding: 0 !important;
@@ -400,7 +412,7 @@ body {
 }
 
 
-/* Arrow */
+/* Button arrow */
 
 #rightSidebarLeftContent article.post.medium a.button.color::after {
     content: "\2192";
@@ -408,6 +420,8 @@ body {
     display: inline-block !important;
 
     position: static !important;
+
+    flex: 0 0 auto !important;
 
     width: auto !important;
     height: auto !important;
@@ -422,12 +436,10 @@ body {
     font-size: 15px !important;
 
     line-height: 1 !important;
-
-    flex: 0 0 auto !important;
 }
 
 
-/* Hover */
+/* Button hover */
 
 #rightSidebarLeftContent article.post.medium a.button.color:hover,
 #rightSidebarLeftContent article.post.medium a.button.color:focus {
@@ -441,7 +453,7 @@ body {
 
 
 /* =========================================================
-   REMOVE OLD ARTICLE LINES
+   REMOVE OLD SEPARATOR LINES
    ========================================================= */
 
 #rightSidebarLeftContent > .line {
@@ -458,7 +470,7 @@ body {
 
     grid-column: 1 / -1 !important;
 
-    width: 100% !important;
+    width: auto !important;
     height: 0 !important;
 
     clear: both !important;
@@ -476,8 +488,7 @@ body {
 
     position: static !important;
 
-    width: 100% !important;
-    max-width: 100% !important;
+    width: auto !important;
 
     margin: 10px 0 0 0 !important;
     padding: 8px 0 0 0 !important;
@@ -557,7 +568,7 @@ body {
 
 
 /* =========================================================
-   RIGHT SEARCH COLUMN
+   RIGHT SEARCH COLUMN - DESKTOP
    ========================================================= */
 
 #rightSidebarRightContent {
@@ -568,7 +579,6 @@ body {
     position: static !important;
 
     width: calc(25% - 12px) !important;
-    max-width: none !important;
     min-width: 0 !important;
 
     height: auto !important;
@@ -585,8 +595,7 @@ body {
 #rightSidebar {
     display: block !important;
 
-    width: 100% !important;
-    max-width: 100% !important;
+    width: auto !important;
 
     margin: 0 !important;
     padding: 20px !important;
@@ -609,8 +618,7 @@ body {
 #rightSidebar .widget-search {
     position: relative !important;
 
-    width: 100% !important;
-    max-width: 100% !important;
+    width: auto !important;
 
     margin: 0 !important;
 }
@@ -721,12 +729,12 @@ body {
        screen and (max-device-width: 800px) {
 
     #content > .container.floated {
-        width: 100% !important;
+        width: auto !important;
 
-        margin: 0 !important;
+        margin-left: 8px !important;
+        margin-right: 8px !important;
 
-        padding-left: 8px !important;
-        padding-right: 8px !important;
+        padding: 0 !important;
     }
 
 
@@ -738,7 +746,7 @@ body {
     #rightSidebarLeftContent {
         float: none !important;
 
-        width: 100% !important;
+        width: auto !important;
 
         grid-template-columns:
             repeat(2, minmax(0, 1fr)) !important;
@@ -748,7 +756,7 @@ body {
     #rightSidebarRightContent {
         float: none !important;
 
-        width: 100% !important;
+        width: auto !important;
 
         margin-top: 18px !important;
     }
@@ -760,52 +768,108 @@ body {
    MOBILE
 
    IMPORTANT:
-   DO NOT USE GRID FOR THE RECORD LIST ON MOBILE.
+   On mobile, remove ALL percentage widths from the
+   wrapper -> content -> container -> record chain.
 
-   Plain block layout avoids conflicts with RAMCO's
-   old floated grid system.
+   Width:auto makes each block fill the space actually
+   available from its parent.
    ========================================================= */
 
 @media screen and (max-width: 600px),
        screen and (max-device-width: 600px) {
 
-    html,
-    body,
-    #wrapper,
-    #content {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
+    /* =====================================================
+       ROOT
+       ===================================================== */
 
-        margin: 0 !important;
+    html,
+    body {
+        max-width: 100% !important;
 
         overflow-x: hidden !important;
     }
 
 
-    /* =====================================================
-       RESET RAMCO CONTAINERS
-       ===================================================== */
-
-    #content > .container.floated {
+    #wrapper {
         display: block !important;
-
-        float: none !important;
 
         position: static !important;
 
-        width: 100% !important;
-        max-width: 100% !important;
+        float: none !important;
+
+        width: auto !important;
+        max-width: none !important;
         min-width: 0 !important;
 
-        margin: 0 !important;
-        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        padding-left: 0 !important;
+        padding-right: 0 !important;
 
         transform: none !important;
 
         overflow-x: hidden !important;
     }
 
+
+    /* =====================================================
+       CONTENT
+       ===================================================== */
+
+    #content {
+        display: block !important;
+
+        position: static !important;
+
+        float: none !important;
+
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        transform: none !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* =====================================================
+       MAIN RAMCO CONTAINER
+       ===================================================== */
+
+    #content > .container.floated {
+        display: block !important;
+
+        position: static !important;
+
+        float: none !important;
+
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        transform: none !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* =====================================================
+       INNER RAMCO LAYOUT
+       ===================================================== */
 
     #content > .container.floated .grid,
     #content > .container.floated .row,
@@ -813,16 +877,19 @@ body {
     #formPanel {
         display: block !important;
 
-        float: none !important;
-
         position: static !important;
 
-        width: 100% !important;
-        max-width: 100% !important;
+        float: none !important;
+
+        width: auto !important;
+        max-width: none !important;
         min-width: 0 !important;
 
-        margin: 0 !important;
-        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        padding-left: 0 !important;
+        padding-right: 0 !important;
 
         transform: none !important;
 
@@ -831,27 +898,31 @@ body {
 
 
     /* =====================================================
-       MOBILE MAIN CONTENT
+       MAIN CONTENT AREA
+
+       This is the ONE place that creates horizontal
+       spacing on mobile.
        ===================================================== */
 
     #RightSidebarLayout {
         display: block !important;
 
-        float: none !important;
-
         position: static !important;
 
-        width: 100% !important;
-        max-width: 100% !important;
+        float: none !important;
+
+        width: auto !important;
+        max-width: none !important;
         min-width: 0 !important;
 
-        margin: 0 !important;
+        margin:
+            0 !important;
 
         padding:
             14px
-            0
+            14px
             18px
-            0 !important;
+            14px !important;
 
         transform: none !important;
 
@@ -860,9 +931,9 @@ body {
 
 
     /* =====================================================
-       MOBILE RECORD LIST
+       RECORD LIST
 
-       Plain block layout.
+       Remove grid + old twelve/floated behavior.
        ===================================================== */
 
     #rightSidebarLeftContent,
@@ -871,46 +942,48 @@ body {
     #rightSidebarLeftContent.twelve.floated {
         display: block !important;
 
+        position: static !important;
+
         float: none !important;
         clear: both !important;
-
-        position: static !important;
 
         left: auto !important;
         right: auto !important;
 
-        width: 100% !important;
-        max-width: 100% !important;
+        width: auto !important;
+        max-width: none !important;
         min-width: 0 !important;
 
         height: auto !important;
         min-height: 0 !important;
         max-height: none !important;
 
-        margin: 0 !important;
-        padding: 0 !important;
+        margin:
+            0 !important;
+
+        padding:
+            0 !important;
 
         transform: none !important;
 
-        overflow-x: hidden !important;
-        overflow-y: visible !important;
+        overflow: visible !important;
     }
 
 
     /* =====================================================
        MOBILE CARD
 
-       Width is AUTO rather than 100%.
-       Equal margins establish the card width.
+       No width declaration.
+       The card naturally fills the available block space.
        ===================================================== */
 
     #rightSidebarLeftContent article.post.medium {
         display: flex !important;
 
+        position: static !important;
+
         float: none !important;
         clear: both !important;
-
-        position: static !important;
 
         left: auto !important;
         right: auto !important;
@@ -924,9 +997,9 @@ body {
 
         margin:
             0
-            14px
+            0
             12px
-            14px !important;
+            0 !important;
 
         padding: 0 !important;
 
@@ -940,20 +1013,11 @@ body {
     }
 
 
-    /* Remove separator */
-
-    #rightSidebarLeftContent > .line {
-        display: none !important;
-    }
-
-
     /* Card content */
 
     #rightSidebarLeftContent article.post.medium .medium-content {
-        display: flex !important;
-
-        width: 100% !important;
-        max-width: 100% !important;
+        width: auto !important;
+        max-width: none !important;
         min-width: 0 !important;
 
         height: auto !important;
@@ -994,9 +1058,9 @@ body {
 
         align-self: flex-start !important;
 
-        float: none !important;
-
         position: static !important;
+
+        float: none !important;
 
         width: auto !important;
         max-width: 100% !important;
@@ -1023,17 +1087,18 @@ body {
 
     /* =====================================================
        PAGINATION
-
-       Block layout now, so remove grid-specific positioning.
        ===================================================== */
 
     #RightSidebarLeftContentPlaceHolder_queryList_PageFilter_ClearFix {
         display: block !important;
 
-        width: 100% !important;
+        width: auto !important;
         height: 0 !important;
 
         clear: both !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
 
@@ -1050,11 +1115,15 @@ body {
 
         margin:
             4px
-            14px
             0
-            14px !important;
+            0
+            0 !important;
 
-        padding: 4px 0 0 0 !important;
+        padding:
+            4px
+            0
+            0
+            0 !important;
     }
 
 
@@ -1064,7 +1133,7 @@ body {
 
 
     /* =====================================================
-       MOBILE SEARCH
+       MOBILE SEARCH COLUMN
        ===================================================== */
 
     #rightSidebarRightContent,
@@ -1073,16 +1142,16 @@ body {
     #rightSidebarRightContent.four.floated {
         display: block !important;
 
+        position: static !important;
+
         float: none !important;
         clear: both !important;
-
-        position: static !important;
 
         left: auto !important;
         right: auto !important;
 
-        width: 100% !important;
-        max-width: 100% !important;
+        width: auto !important;
+        max-width: none !important;
         min-width: 0 !important;
 
         margin:
@@ -1095,7 +1164,7 @@ body {
 
         transform: none !important;
 
-        overflow: hidden !important;
+        overflow: visible !important;
     }
 
 
@@ -1104,10 +1173,9 @@ body {
 
         width: auto !important;
         max-width: none !important;
+        min-width: 0 !important;
 
-        margin:
-            0
-            14px !important;
+        margin: 0 !important;
 
         padding: 16px !important;
 
@@ -1124,12 +1192,17 @@ body {
 @media screen and (max-width: 380px),
        screen and (max-device-width: 380px) {
 
-    #rightSidebarLeftContent article.post.medium {
-        margin:
-            0
+    #RightSidebarLayout {
+        padding:
             10px
             10px
+            16px
             10px !important;
+    }
+
+
+    #rightSidebarLeftContent article.post.medium {
+        margin-bottom: 10px !important;
     }
 
 
@@ -1152,17 +1225,7 @@ body {
     }
 
 
-    #rightSidebarLeftContent .pagination {
-        margin-left: 10px !important;
-        margin-right: 10px !important;
-    }
-
-
     #rightSidebar {
-        margin:
-            0
-            10px !important;
-
         padding: 14px !important;
     }
 
