@@ -5,7 +5,7 @@
 
 
 /* =========================================================
-   BRAND VARIABLES
+   BRAND
    ========================================================= */
 
 :root {
@@ -44,17 +44,25 @@
 
 html,
 body {
+    max-width: 100% !important;
     overflow-x: hidden !important;
 }
 
 
 #content {
+    width: 100% !important;
+    max-width: 100% !important;
+
     background: var(--star-background) !important;
+
+    overflow-x: hidden !important;
+
+    box-sizing: border-box !important;
 }
 
 
 /* =========================================================
-   EXPAND OLD RAMCO / NEVIA CONTAINER
+   RAMCO CONTAINER
    ========================================================= */
 
 #content > .container.floated {
@@ -78,7 +86,7 @@ body {
 #updatePanel,
 #formPanel {
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
 
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -91,13 +99,11 @@ body {
 
 
 /* =========================================================
-   MAIN RAMCO LEFT / RIGHT LAYOUT
+   MAIN RAMCO LAYOUT
 
-   IMPORTANT:
-   Do not convert this container to CSS Grid.
-
-   RAMCO expects:
-   LEFT RECORDS | RIGHT FILTERS
+   Desktop:
+   Records on left
+   Search on right
    ========================================================= */
 
 #RightSidebarLayout {
@@ -106,14 +112,13 @@ body {
     position: relative !important;
 
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
 
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
 
     margin: 0 !important;
-
     padding: 24px !important;
 
     background: var(--star-background) !important;
@@ -134,7 +139,7 @@ body {
 
 
 /* =========================================================
-   LEFT RECORD COLUMN
+   LEFT RECORD AREA
    ========================================================= */
 
 #rightSidebarLeftContent {
@@ -156,8 +161,7 @@ body {
     min-width: 0 !important;
 
     /*
-       RAMCO sometimes writes an inline height here.
-       This overrides it.
+       RAMCO sometimes injects a fixed inline height.
     */
     height: auto !important;
     min-height: 0 !important;
@@ -176,7 +180,7 @@ body {
 
 
 /* =========================================================
-   ARTICLE CARDS
+   ARTICLE CARD
    ========================================================= */
 
 #rightSidebarLeftContent article.post.medium {
@@ -189,7 +193,7 @@ body {
     float: none !important;
 
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
     min-width: 0 !important;
 
     height: auto !important;
@@ -242,7 +246,7 @@ body {
     flex-direction: column !important;
 
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
     min-width: 0 !important;
 
     height: 100% !important;
@@ -380,10 +384,6 @@ body {
 
     min-height: 44px !important;
 
-    /*
-       Keeps buttons aligned at the bottom when
-       card titles have different lengths.
-    */
     margin: auto 0 0 0 !important;
 
     padding: 11px 18px !important;
@@ -433,13 +433,12 @@ body {
     display: inline-block;
 
     font-size: 16px;
+
     line-height: 1;
 
     transition: transform 0.2s ease !important;
 }
 
-
-/* Button hover */
 
 #rightSidebarLeftContent article.post.medium a.button.color:hover,
 #rightSidebarLeftContent article.post.medium a.button.color:focus {
@@ -464,7 +463,7 @@ body {
 
 
 /* =========================================================
-   REMOVE OLD ARTICLE SEPARATOR LINES
+   REMOVE OLD ARTICLE SEPARATORS
    ========================================================= */
 
 #rightSidebarLeftContent > .line {
@@ -474,9 +473,6 @@ body {
 
 /* =========================================================
    PAGINATION
-
-   Keep RAMCO pagination intact.
-   It is part of the Query List structure.
    ========================================================= */
 
 #RightSidebarLeftContentPlaceHolder_queryList_PageFilter_ClearFix {
@@ -494,8 +490,6 @@ body {
 }
 
 
-/* Pagination container */
-
 #rightSidebarLeftContent .pagination,
 #RightSidebarLeftContentPlaceHolder_queryList_PageFilter_PageFilter {
     display: block !important;
@@ -506,7 +500,7 @@ body {
 
     width: 100% !important;
 
-    margin: 8px 0 0 0 !important;
+    margin: 10px 0 0 0 !important;
     padding: 8px 0 0 0 !important;
 
     visibility: visible !important;
@@ -515,8 +509,6 @@ body {
     box-sizing: border-box !important;
 }
 
-
-/* Pagination list */
 
 #rightSidebarLeftContent .pagination ul {
     display: flex !important;
@@ -534,8 +526,6 @@ body {
 }
 
 
-/* Pagination item */
-
 #rightSidebarLeftContent .pagination ul li {
     display: block !important;
 
@@ -545,8 +535,6 @@ body {
     padding: 0 !important;
 }
 
-
-/* Pagination button */
 
 #rightSidebarLeftContent .pagination ul li a {
     display: inline-flex !important;
@@ -558,7 +546,6 @@ body {
     height: 38px !important;
 
     margin: 0 !important;
-
     padding: 0 11px !important;
 
     background: var(--star-white) !important;
@@ -583,12 +570,9 @@ body {
     transition:
         background-color 0.2s ease,
         border-color 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease !important;
+        color 0.2s ease !important;
 }
 
-
-/* Current page */
 
 #rightSidebarLeftContent .pagination ul li a.current {
     background: var(--star-navy) !important;
@@ -599,16 +583,12 @@ body {
 }
 
 
-/* Pagination hover */
-
 #rightSidebarLeftContent .pagination ul li a:hover {
     background: var(--star-coral) !important;
 
     color: var(--star-white) !important;
 
     border-color: var(--star-coral) !important;
-
-    transform: translateY(-1px);
 }
 
 
@@ -679,9 +659,7 @@ body {
 }
 
 
-/* =========================================================
-   SEARCH HEADINGS
-   ========================================================= */
+/* Search headings */
 
 #rightSidebar .widget-search h4 {
     display: block !important;
@@ -707,8 +685,6 @@ body {
     font-weight: 600 !important;
 
     text-decoration: none !important;
-
-    transition: color 0.2s ease !important;
 }
 
 
@@ -747,11 +723,6 @@ body {
     font-size: 14px !important;
 
     box-sizing: border-box !important;
-
-    transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease !important;
 }
 
 
@@ -785,9 +756,6 @@ body {
     background-color: var(--star-navy) !important;
 
     border-radius: 0 8px 8px 0 !important;
-
-    transition:
-        background-color 0.2s ease !important;
 }
 
 
@@ -797,16 +765,34 @@ body {
 
 
 /* =========================================================
-   TABLET
+   TABLET / SMALL SCREEN
 
-   Keep cards in two columns.
-   Move search below the records.
+   max-device-width is included because this older RAMCO
+   page may not use a modern viewport configuration.
    ========================================================= */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px),
+       screen and (max-device-width: 800px) {
+
+    html,
+    body,
+    #wrapper,
+    #content {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        overflow-x: hidden !important;
+    }
+
 
     #content > .container.floated {
-        width: calc(100% - 16px) !important;
+        float: none !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
 
         padding-left: 8px !important;
         padding-right: 8px !important;
@@ -814,17 +800,33 @@ body {
 
 
     #RightSidebarLayout {
-        padding: 18px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 16px !important;
+
+        overflow: hidden !important;
     }
 
+
+    /*
+       Stop using the desktop 75% / 25% floats.
+    */
 
     #rightSidebarLeftContent {
         float: none !important;
 
         width: 100% !important;
+        max-width: 100% !important;
 
         grid-template-columns:
             repeat(2, minmax(0, 1fr)) !important;
+
+        margin: 0 !important;
+
+        overflow: visible !important;
     }
 
 
@@ -832,13 +834,15 @@ body {
         float: none !important;
 
         width: 100% !important;
+        max-width: 100% !important;
 
-        margin-top: 18px !important;
+        margin: 18px 0 0 0 !important;
     }
 
 
     #rightSidebar {
         width: 100% !important;
+        max-width: 100% !important;
     }
 
 }
@@ -847,61 +851,154 @@ body {
 /* =========================================================
    MOBILE
 
-   One card per row.
+   Force ONE CARD PER ROW.
+
+   max-device-width catches older pages where the normal
+   viewport width media query may not behave correctly.
    ========================================================= */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px),
+       screen and (max-device-width: 600px) {
 
-    #content > .container.floated {
+    html,
+    body,
+    #wrapper,
+    #content {
         width: 100% !important;
-        max-width: none !important;
+        max-width: 100% !important;
+
+        min-width: 0 !important;
 
         margin-left: 0 !important;
         margin-right: 0 !important;
 
-        padding-left: 6px !important;
-        padding-right: 6px !important;
+        overflow-x: hidden !important;
     }
 
 
-    #RightSidebarLayout {
+    #content > .container.floated {
+        float: none !important;
+
         width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
 
         margin: 0 !important;
 
-        padding: 12px !important;
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+
+        overflow: hidden !important;
     }
 
 
-    #rightSidebarLeftContent {
-        grid-template-columns: 1fr !important;
-
-        gap: 14px !important;
-
+    #content > .container.floated .grid,
+    #content > .container.floated .row,
+    #updatePanel,
+    #formPanel {
         width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
 
-        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
 
         overflow: visible !important;
     }
 
 
-    #rightSidebarLeftContent article.post.medium {
-        width: 100% !important;
+    #RightSidebarLayout {
+        display: block !important;
 
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        padding: 12px !important;
+
+        overflow: hidden !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       RECORD AREA - FORCE SINGLE COLUMN
+       ===================================================== */
+
+    #rightSidebarLeftContent {
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr) !important;
+
+        grid-auto-columns:
+            minmax(0, 1fr) !important;
+
+        gap: 14px !important;
+
+        float: none !important;
+
+        position: static !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: visible !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       MOBILE CARD
+       ===================================================== */
+
+    #rightSidebarLeftContent article.post.medium {
+        display: flex !important;
+
+        grid-column: 1 !important;
+
+        float: none !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        height: auto !important;
         min-height: 0 !important;
 
+        margin: 0 !important;
+
         border-radius: 12px !important;
+
+        overflow: hidden !important;
+
+        box-sizing: border-box !important;
     }
 
 
     #rightSidebarLeftContent article.post.medium .medium-content {
         width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
 
         height: auto !important;
         min-height: 0 !important;
 
         padding: 20px !important;
+
+        box-sizing: border-box !important;
     }
 
 
@@ -923,14 +1020,27 @@ body {
         align-self: stretch !important;
 
         width: 100% !important;
+        max-width: 100% !important;
 
         min-height: 46px !important;
 
         padding: 12px 16px !important;
+
+        box-sizing: border-box !important;
     }
 
 
-    /* Center page controls */
+    /* Pagination */
+
+    #RightSidebarLeftContentPlaceHolder_queryList_PageFilter_ClearFix,
+    #rightSidebarLeftContent .pagination,
+    #RightSidebarLeftContentPlaceHolder_queryList_PageFilter_PageFilter {
+        grid-column: 1 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
 
     #rightSidebarLeftContent .pagination ul {
         justify-content: center !important;
@@ -943,19 +1053,32 @@ body {
     }
 
 
-    #rightSidebarRightContent {
-        width: 100% !important;
+    /* Search below records */
 
-        margin-top: 16px !important;
+    #rightSidebarRightContent {
+        display: block !important;
+
+        float: none !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 16px 0 0 0 !important;
+
+        box-sizing: border-box !important;
     }
 
 
     #rightSidebar {
         width: 100% !important;
+        max-width: 100% !important;
 
         padding: 18px !important;
 
         border-radius: 12px !important;
+
+        box-sizing: border-box !important;
     }
 
 }
@@ -965,13 +1088,8 @@ body {
    VERY SMALL PHONES
    ========================================================= */
 
-@media screen and (max-width: 380px) {
-
-    #content > .container.floated {
-        padding-left: 3px !important;
-        padding-right: 3px !important;
-    }
-
+@media screen and (max-width: 380px),
+       screen and (max-device-width: 380px) {
 
     #RightSidebarLayout {
         padding: 9px !important;
