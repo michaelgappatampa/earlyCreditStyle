@@ -1,7 +1,6 @@
-
 /* =========================================================
-   STAR ARTICLE / NEWS CARDS
-   Suncoast Tampa Association of REALTORS®
+   SUNCOAST TAMPA ASSOCIATION OF REALTORS
+   CREDIT / EDUCATION ARTICLE CARDS
    ========================================================= */
 
 :root {
@@ -17,469 +16,578 @@
     --star-border: #e4e9ec;
 
     --star-radius: 14px;
-    --star-shadow: 0 5px 20px rgba(17, 47, 69, 0.08);
-    --star-shadow-hover: 0 12px 30px rgba(17, 47, 69, 0.15);
+
+    --star-shadow:
+        0 4px 12px rgba(17, 47, 69, 0.07),
+        0 1px 3px rgba(17, 47, 69, 0.05);
+
+    --star-shadow-hover:
+        0 12px 28px rgba(17, 47, 69, 0.13),
+        0 3px 8px rgba(17, 47, 69, 0.06);
 }
 
 
 /* =========================================================
-   ARTICLE CARDS
+   PAGE
    ========================================================= */
 
-main article,
-.site-main article,
-.star-article-card {
-    background: var(--star-white);
-    border: 1px solid var(--star-border);
-    border-radius: var(--star-radius);
-    box-shadow: var(--star-shadow);
-    overflow: hidden;
-    margin-bottom: 28px;
+#content {
+    background: var(--star-background);
+}
+
+
+/* =========================================================
+   MAIN CONTENT COLUMN
+   ========================================================= */
+
+#rightSidebarLeftContent {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ARTICLE CARD
+   Actual RAMCO markup:
+   <article class="post medium">
+   ========================================================= */
+
+#rightSidebarLeftContent article.post.medium {
+    display: block !important;
+    float: none !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 0 22px 0 !important;
+    padding: 0 !important;
+
+    background: var(--star-white) !important;
+
+    border: 1px solid var(--star-border) !important;
+    border-radius: var(--star-radius) !important;
+
+    box-shadow: var(--star-shadow) !important;
+
+    overflow: hidden !important;
+
+    box-sizing: border-box !important;
 
     transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
 }
 
 
-/* Slight interaction on desktop */
 @media (hover: hover) {
-    main article:hover,
-    .site-main article:hover,
-    .star-article-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--star-shadow-hover);
-        border-color: rgba(23, 63, 89, 0.18);
+
+    #rightSidebarLeftContent article.post.medium:hover {
+        transform: translateY(-3px);
+
+        border-color: rgba(23, 63, 89, 0.2) !important;
+
+        box-shadow: var(--star-shadow-hover) !important;
     }
+
 }
 
 
 /* =========================================================
-   ARTICLE CONTENT / PADDING
+   CARD CONTENT
    ========================================================= */
 
-/*
-   Covers common WordPress/article structures.
-*/
+#rightSidebarLeftContent article.post.medium .medium-content {
+    display: block !important;
+    float: none !important;
 
-main article .entry-content,
-main article .entry-summary,
-main article .article-content,
-main article .post-content,
-main article .content,
+    width: 100% !important;
+    max-width: none !important;
 
-.site-main article .entry-content,
-.site-main article .entry-summary,
-.site-main article .article-content,
-.site-main article .post-content,
-.site-main article .content,
+    margin: 0 !important;
+    padding: 26px 28px !important;
 
-.star-article-card .article-content {
-    padding: 28px 30px;
-}
-
-
-/*
-   If the article does NOT contain one of the wrappers above,
-   you can place padding directly on the article with:
-
-   class="star-article-card star-card-padding"
-*/
-
-.star-card-padding {
-    padding: 28px 30px;
+    box-sizing: border-box !important;
 }
 
 
 /* =========================================================
-   FEATURED IMAGES
+   HEADER / META
    ========================================================= */
 
-main article > img,
-main article .post-thumbnail img,
-main article .featured-image img,
-main article .wp-post-image,
+#rightSidebarLeftContent article.post.medium header.meta {
+    display: block !important;
 
-.site-main article > img,
-.site-main article .post-thumbnail img,
-.site-main article .featured-image img,
-.site-main article .wp-post-image,
+    width: 100% !important;
 
-.star-article-card > img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 340px;
-    object-fit: cover;
-    margin: 0;
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    border: 0 !important;
+    box-shadow: none !important;
+
+    box-sizing: border-box !important;
 }
 
 
 /* =========================================================
-   HEADINGS
+   ARTICLE TITLE
    ========================================================= */
 
-main article h1,
-main article h2,
-main article h3,
+#rightSidebarLeftContent article.post.medium header.meta h2,
+#rightSidebarLeftContent article.post.medium h2 {
+    display: block !important;
 
-.site-main article h1,
-.site-main article h2,
-.site-main article h3,
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
 
-.star-article-card h1,
-.star-article-card h2,
-.star-article-card h3 {
-    color: var(--star-navy);
-    line-height: 1.2;
-    margin-top: 0;
+    color: var(--star-navy) !important;
+
+    font-size: 22px !important;
+    font-weight: 700 !important;
+
+    line-height: 1.25 !important;
+
+    text-transform: none !important;
 }
 
 
-main article h2,
-.site-main article h2,
-.star-article-card h2 {
-    font-size: clamp(1.35rem, 2vw, 1.75rem);
-    font-weight: 700;
-    margin-bottom: 14px;
-}
+/* Title link */
 
+#rightSidebarLeftContent article.post.medium header.meta h2 a,
+#rightSidebarLeftContent article.post.medium h2 a {
+    display: inline !important;
 
-main article h3,
-.site-main article h3,
-.star-article-card h3 {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-top: 24px;
-    margin-bottom: 10px;
-}
+    margin: 0 !important;
+    padding: 0 !important;
 
+    background: transparent !important;
 
-/* Title links */
-main article h1 a,
-main article h2 a,
-main article h3 a,
+    color: var(--star-navy) !important;
 
-.site-main article h1 a,
-.site-main article h2 a,
-.site-main article h3 a,
+    border: 0 !important;
 
-.star-article-card h1 a,
-.star-article-card h2 a,
-.star-article-card h3 a {
-    color: inherit;
-    text-decoration: none;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+
+    line-height: inherit !important;
+
+    text-decoration: none !important;
+    text-shadow: none !important;
+
     transition: color 0.2s ease;
 }
 
 
-main article h1 a:hover,
-main article h2 a:hover,
-main article h3 a:hover,
-
-.site-main article h1 a:hover,
-.site-main article h2 a:hover,
-.site-main article h3 a:hover,
-
-.star-article-card h1 a:hover,
-.star-article-card h2 a:hover,
-.star-article-card h3 a:hover {
-    color: var(--star-coral);
+#rightSidebarLeftContent article.post.medium header.meta h2 a:hover,
+#rightSidebarLeftContent article.post.medium h2 a:hover {
+    color: var(--star-coral) !important;
 }
 
 
 /* =========================================================
-   ARTICLE TEXT
+   DATE / ARTICLE TEXT
    ========================================================= */
 
-main article p,
-.site-main article p,
-.star-article-card p {
-    color: var(--star-text);
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-top: 0;
-    margin-bottom: 16px;
-}
+#rightSidebarLeftContent article.post.medium .medium-content > p {
+    display: block !important;
 
+    margin: 0 0 18px 0 !important;
+    padding: 0 !important;
 
-main article p:last-child,
-.site-main article p:last-child,
-.star-article-card p:last-child {
-    margin-bottom: 0;
+    color: var(--star-muted) !important;
+
+    font-size: 14px !important;
+    font-weight: 500 !important;
+
+    line-height: 1.5 !important;
 }
 
 
 /* =========================================================
-   ARTICLE META
-   Date / author / category
+   VIEW CREDIT DETAIL BUTTON
    ========================================================= */
 
-main article .entry-meta,
-main article .post-meta,
-main article .article-meta,
+#rightSidebarLeftContent article.post.medium a.button.color {
+    display: inline-flex !important;
 
-.site-main article .entry-meta,
-.site-main article .post-meta,
-.site-main article .article-meta,
+    align-items: center !important;
+    justify-content: center !important;
 
-.star-article-card .entry-meta,
-.star-article-card .post-meta {
-    color: var(--star-muted);
-    font-size: 0.875rem;
-    line-height: 1.5;
-    margin-bottom: 16px;
-}
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 42px !important;
 
+    margin: 0 !important;
+    padding: 10px 18px !important;
 
-main article .entry-meta a,
-main article .post-meta a,
+    background: var(--star-navy) !important;
+    background-color: var(--star-navy) !important;
+    background-image: none !important;
 
-.site-main article .entry-meta a,
-.site-main article .post-meta a,
+    color: var(--star-white) !important;
 
-.star-article-card .entry-meta a,
-.star-article-card .post-meta a {
-    color: var(--star-coral);
-    font-weight: 600;
-    text-decoration: none;
-}
+    border: 0 !important;
+    border-radius: 7px !important;
 
+    box-shadow: none !important;
 
-/* =========================================================
-   ARTICLE LINKS
-   ========================================================= */
+    font-size: 14px !important;
+    font-weight: 700 !important;
 
-main article a,
-.site-main article a,
-.star-article-card a {
-    color: var(--star-navy);
-}
+    line-height: 1.2 !important;
 
+    text-align: center !important;
+    text-decoration: none !important;
+    text-shadow: none !important;
 
-main article p a,
-.site-main article p a,
-.star-article-card p a {
-    color: var(--star-coral-dark);
-    font-weight: 600;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-}
+    box-sizing: border-box !important;
 
-
-/* =========================================================
-   READ MORE / BUTTONS
-   ========================================================= */
-
-main article .read-more,
-main article .more-link,
-main article .wp-block-button__link,
-
-.site-main article .read-more,
-.site-main article .more-link,
-.site-main article .wp-block-button__link,
-
-.star-article-card .read-more,
-.star-article-card .more-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 42px;
-    padding: 10px 20px;
-
-    background: var(--star-navy);
-    color: var(--star-white);
-
-    border: 0;
-    border-radius: 6px;
-
-    font-size: 0.9rem;
-    font-weight: 700;
-    line-height: 1.2;
-
-    text-decoration: none;
+    cursor: pointer !important;
 
     transition:
         background-color 0.2s ease,
-        transform 0.2s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
-main article .read-more:hover,
-main article .more-link:hover,
-main article .wp-block-button__link:hover,
+#rightSidebarLeftContent article.post.medium a.button.color:hover,
+#rightSidebarLeftContent article.post.medium a.button.color:focus {
+    background: var(--star-coral) !important;
+    background-color: var(--star-coral) !important;
+    background-image: none !important;
 
-.site-main article .read-more:hover,
-.site-main article .more-link:hover,
-.site-main article .wp-block-button__link:hover,
+    color: var(--star-white) !important;
 
-.star-article-card .read-more:hover,
-.star-article-card .more-link:hover {
-    background: var(--star-coral);
-    color: var(--star-white);
     transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 10px rgba(17, 47, 69, 0.16) !important;
 }
 
 
 /* =========================================================
-   CATEGORY / ARTICLE TAGS
+   REMOVE OLD LINES BETWEEN ARTICLES
    ========================================================= */
 
-main article .cat-links a,
-main article .category a,
-main article .post-category a,
-
-.site-main article .cat-links a,
-.site-main article .category a,
-.site-main article .post-category a,
-
-.star-article-card .category {
-    display: inline-flex;
-    align-items: center;
-
-    padding: 6px 11px;
-    margin-bottom: 12px;
-
-    background: rgba(243, 101, 112, 0.10);
-    color: var(--star-coral-dark);
-
-    border-radius: 999px;
-
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    text-decoration: none;
+#rightSidebarLeftContent > .line {
+    display: none !important;
 }
 
 
 /* =========================================================
-   LISTS INSIDE ARTICLES
+   SIDEBAR
    ========================================================= */
 
-main article ul,
-main article ol,
-.site-main article ul,
-.site-main article ol,
-.star-article-card ul,
-.star-article-card ol {
-    margin: 0 0 18px 0;
-    padding-left: 22px;
-    color: var(--star-text);
+#rightSidebarRightContent {
+    box-sizing: border-box;
 }
 
 
-main article li,
-.site-main article li,
-.star-article-card li {
-    margin-bottom: 8px;
-    line-height: 1.65;
+#rightSidebar {
+    background: var(--star-white);
+
+    border: 1px solid var(--star-border);
+    border-radius: var(--star-radius);
+
+    box-shadow: var(--star-shadow);
+
+    padding: 22px;
+
+    box-sizing: border-box;
 }
 
 
 /* =========================================================
-   OPTIONAL ARTICLE GRID
-   Add class="star-article-grid" around your articles
+   FILTER / SEARCH HEADINGS
    ========================================================= */
 
-.star-article-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 28px;
-    align-items: stretch;
+#rightSidebar .widget-search h4 {
+    margin: 0 0 10px 0 !important;
+
+    color: var(--star-navy) !important;
+
+    font-size: 15px !important;
+    font-weight: 700 !important;
+
+    line-height: 1.35 !important;
 }
 
 
-.star-article-grid > article,
-.star-article-grid > .star-article-card {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0;
-    height: 100%;
+/* Clear filters */
+
+#rightSidebar .widget-search h4 a {
+    color: var(--star-coral-dark) !important;
+
+    font-size: 13px !important;
+    font-weight: 600 !important;
+
+    text-decoration: none !important;
 }
 
 
-.star-article-grid .entry-content,
-.star-article-grid .entry-summary,
-.star-article-grid .article-content,
-.star-article-grid .post-content {
-    flex: 1;
+#rightSidebar .widget-search h4 a:hover {
+    color: var(--star-navy) !important;
 }
 
 
 /* =========================================================
-   TWO-COLUMN LAYOUT
+   SEARCH FIELD
    ========================================================= */
 
-.star-article-grid.two-columns {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+#rightSidebar .search-field {
+    width: 100% !important;
+    height: 44px !important;
+
+    margin: 0 !important;
+    padding: 10px 44px 10px 14px !important;
+
+    background: var(--star-white) !important;
+
+    color: var(--star-text) !important;
+
+    border: 1px solid var(--star-border) !important;
+    border-radius: 7px !important;
+
+    box-shadow: none !important;
+
+    font-size: 14px !important;
+
+    box-sizing: border-box !important;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#rightSidebar .search-field:focus {
+    border-color: var(--star-navy) !important;
+
+    box-shadow:
+        0 0 0 3px rgba(23, 63, 89, 0.1) !important;
+
+    outline: none !important;
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   SEARCH BUTTON
    ========================================================= */
 
-@media (max-width: 1024px) {
+#rightSidebar .search-btn-widget {
+    background-color: var(--star-navy) !important;
 
-    .star-article-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px;
+    border-radius: 0 7px 7px 0 !important;
+
+    transition: background-color 0.2s ease;
+}
+
+
+#rightSidebar .search-btn-widget:hover {
+    background-color: var(--star-coral) !important;
+}
+
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+#rightSidebarLeftContent .pagination {
+    display: block;
+
+    margin: 28px 0 10px 0 !important;
+    padding: 0 !important;
+}
+
+
+#rightSidebarLeftContent .pagination ul {
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 6px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    list-style: none !important;
+}
+
+
+#rightSidebarLeftContent .pagination ul li {
+    display: block !important;
+
+    float: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+#rightSidebarLeftContent .pagination ul li a {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 38px !important;
+    height: 38px !important;
+
+    margin: 0 !important;
+    padding: 0 10px !important;
+
+    background: var(--star-white) !important;
+
+    color: var(--star-navy) !important;
+
+    border: 1px solid var(--star-border) !important;
+    border-radius: 6px !important;
+
+    box-shadow: none !important;
+
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+    text-decoration: none !important;
+
+    box-sizing: border-box !important;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+#rightSidebarLeftContent .pagination ul li a:hover,
+#rightSidebarLeftContent .pagination ul li a.current {
+    background: var(--star-navy) !important;
+
+    color: var(--star-white) !important;
+
+    border-color: var(--star-navy) !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 959px) {
+
+    #rightSidebarLeftContent {
+        width: 100% !important;
+    }
+
+
+    #rightSidebarRightContent {
+        width: 100% !important;
+
+        margin-top: 24px !important;
     }
 
 }
 
 
-@media (max-width: 700px) {
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-    .star-article-grid,
-    .star-article-grid.two-columns {
-        grid-template-columns: 1fr;
-        gap: 18px;
+@media screen and (max-width: 767px) {
+
+    #content {
+        background: var(--star-background);
     }
 
 
-    main article,
-    .site-main article,
-    .star-article-card {
-        border-radius: 10px;
-        margin-bottom: 18px;
+    #rightSidebarLeftContent,
+    #rightSidebarRightContent {
+        display: block !important;
+        float: none !important;
+
+        width: 100% !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        box-sizing: border-box !important;
     }
 
 
-    main article .entry-content,
-    main article .entry-summary,
-    main article .article-content,
-    main article .post-content,
-    main article .content,
+    /* Cards */
 
-    .site-main article .entry-content,
-    .site-main article .entry-summary,
-    .site-main article .article-content,
-    .site-main article .post-content,
-    .site-main article .content,
+    #rightSidebarLeftContent article.post.medium {
+        width: 100% !important;
 
-    .star-article-card .article-content,
-    .star-card-padding {
-        padding: 20px;
+        margin-bottom: 16px !important;
+
+        border-radius: 11px !important;
     }
 
 
-    main article > img,
-    main article .post-thumbnail img,
-    main article .featured-image img,
-    main article .wp-post-image,
+    #rightSidebarLeftContent article.post.medium .medium-content {
+        padding: 20px !important;
+    }
 
-    .site-main article > img,
-    .site-main article .post-thumbnail img,
-    .site-main article .featured-image img,
-    .site-main article .wp-post-image,
 
-    .star-article-card > img {
-        max-height: 240px;
+    /* Title */
+
+    #rightSidebarLeftContent article.post.medium h2 {
+        font-size: 19px !important;
+    }
+
+
+    /* Date */
+
+    #rightSidebarLeftContent article.post.medium .medium-content > p {
+        margin-bottom: 16px !important;
+
+        font-size: 13px !important;
+    }
+
+
+    /* Button */
+
+    #rightSidebarLeftContent article.post.medium a.button.color {
+        display: flex !important;
+
+        width: 100% !important;
+
+        min-height: 44px !important;
+
+        padding: 11px 16px !important;
+    }
+
+
+    /* Sidebar */
+
+    #rightSidebar {
+        margin-top: 5px !important;
+
+        padding: 18px !important;
+
+        border-radius: 11px !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    #rightSidebarLeftContent article.post.medium .medium-content {
+        padding: 18px !important;
+    }
+
+
+    #rightSidebarLeftContent article.post.medium h2 {
+        font-size: 18px !important;
     }
 
 }
@@ -489,9 +597,30 @@ main article li,
    ACCESSIBILITY
    ========================================================= */
 
-main article a:focus-visible,
-.site-main article a:focus-visible,
-.star-article-card a:focus-visible {
-    outline: 3px solid var(--star-coral);
-    outline-offset: 3px;
+#rightSidebarLeftContent article.post.medium a:focus-visible,
+#rightSidebar a:focus-visible {
+    outline: 3px solid var(--star-coral) !important;
+    outline-offset: 3px !important;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #rightSidebarLeftContent article.post.medium,
+    #rightSidebarLeftContent article.post.medium a,
+    #rightSidebar a,
+    #rightSidebar input {
+        transition: none !important;
+    }
+
+
+    #rightSidebarLeftContent article.post.medium:hover,
+    #rightSidebarLeftContent article.post.medium a.button.color:hover {
+        transform: none !important;
+    }
+
 }
