@@ -442,17 +442,157 @@ body {
 
 
 /* =========================================================
-   REMOVE PAGINATION
-
-   Removes the "1" page number completely.
+   PAGINATION
+   Keep RAMCO paging active and visible
    ========================================================= */
 
-#rightSidebarLeftContent .pagination,
-#RightSidebarLeftContentPlaceHolder_queryList_PageFilter_PageFilter,
 #RightSidebarLeftContentPlaceHolder_queryList_PageFilter_ClearFix {
-    display: none !important;
+    display: block !important;
+
+    grid-column: 1 / -1 !important;
+
+    width: 100% !important;
+    height: 0 !important;
+
+    clear: both !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
+
+/* Keep pagination underneath all article cards */
+
+#rightSidebarLeftContent .pagination,
+#RightSidebarLeftContentPlaceHolder_queryList_PageFilter_PageFilter {
+    display: block !important;
+
+    grid-column: 1 / -1 !important;
+
+    width: 100% !important;
+
+    margin: 10px 0 0 0 !important;
+    padding: 8px 0 0 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* Pagination list */
+
+#rightSidebarLeftContent .pagination ul {
+    display: flex !important;
+
+    flex-wrap: wrap !important;
+    align-items: center !important;
+
+    gap: 7px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    list-style: none !important;
+}
+
+
+/* Remove old RAMCO float behavior */
+
+#rightSidebarLeftContent .pagination ul li {
+    display: block !important;
+
+    float: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* Page buttons */
+
+#rightSidebarLeftContent .pagination ul li a {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 38px !important;
+    height: 38px !important;
+
+    margin: 0 !important;
+    padding: 0 11px !important;
+
+    background: #ffffff !important;
+
+    color: #173f59 !important;
+
+    border: 1px solid #dce5e9 !important;
+    border-radius: 8px !important;
+
+    box-shadow:
+        0 2px 5px rgba(16, 47, 69, 0.06) !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+
+    line-height: 1 !important;
+
+    text-decoration: none !important;
+
+    box-sizing: border-box !important;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease !important;
+}
+
+
+/* Current page */
+
+#rightSidebarLeftContent .pagination ul li a.current {
+    background: #173f59 !important;
+
+    color: #ffffff !important;
+
+    border-color: #173f59 !important;
+}
+
+
+/* Hover */
+
+#rightSidebarLeftContent .pagination ul li a:hover {
+    background: #f36570 !important;
+
+    color: #ffffff !important;
+
+    border-color: #f36570 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* Mobile pagination */
+
+@media screen and (max-width: 650px) {
+
+    #rightSidebarLeftContent .pagination {
+        margin-top: 4px !important;
+        padding-top: 6px !important;
+    }
+
+
+    #rightSidebarLeftContent .pagination ul {
+        justify-content: center !important;
+    }
+
+
+    #rightSidebarLeftContent .pagination ul li a {
+        min-width: 40px !important;
+        height: 40px !important;
+    }
+
+}
 
 /* =========================================================
    RIGHT SEARCH COLUMN
