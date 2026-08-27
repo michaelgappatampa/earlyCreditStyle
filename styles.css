@@ -5,7 +5,7 @@
 
 
 /* =========================================================
-   BRAND
+   BRAND VARIABLES
    ========================================================= */
 
 :root {
@@ -44,7 +44,9 @@
 
 html,
 body {
+    width: 100% !important;
     max-width: 100% !important;
+
     overflow-x: hidden !important;
 }
 
@@ -100,10 +102,6 @@ body {
 
 /* =========================================================
    MAIN RAMCO LAYOUT
-
-   Desktop:
-   Records on left
-   Search on right
    ========================================================= */
 
 #RightSidebarLayout {
@@ -119,6 +117,7 @@ body {
     max-height: none !important;
 
     margin: 0 !important;
+
     padding: 24px !important;
 
     background: var(--star-background) !important;
@@ -160,9 +159,6 @@ body {
     max-width: none !important;
     min-width: 0 !important;
 
-    /*
-       RAMCO sometimes injects a fixed inline height.
-    */
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
@@ -256,6 +252,8 @@ body {
 
     padding: 24px !important;
 
+    overflow: hidden !important;
+
     visibility: visible !important;
     opacity: 1 !important;
 
@@ -273,6 +271,7 @@ body {
     position: static !important;
 
     width: 100% !important;
+    max-width: 100% !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -282,9 +281,6 @@ body {
     border: 0 !important;
 
     box-shadow: none !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
 
     box-sizing: border-box !important;
 }
@@ -296,6 +292,9 @@ body {
 
 #rightSidebarLeftContent article.post.medium h2 {
     display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
 
     margin: 0 0 10px 0 !important;
     padding: 0 !important;
@@ -309,8 +308,7 @@ body {
 
     text-transform: none !important;
 
-    visibility: visible !important;
-    opacity: 1 !important;
+    overflow-wrap: anywhere !important;
 }
 
 
@@ -350,6 +348,8 @@ body {
 #rightSidebarLeftContent article.post.medium .medium-content > p {
     display: block !important;
 
+    width: 100% !important;
+
     margin: 0 0 20px 0 !important;
     padding: 0 !important;
 
@@ -359,9 +359,6 @@ body {
     font-weight: 500 !important;
 
     line-height: 1.5 !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
 }
 
 
@@ -377,16 +374,26 @@ body {
 
     align-self: flex-start !important;
 
-    gap: 8px !important;
+    position: static !important;
+
+    float: none !important;
+
+    clear: none !important;
+
+    gap: 7px !important;
 
     width: auto !important;
+    max-width: 100% !important;
     min-width: 0 !important;
 
-    min-height: 44px !important;
+    height: auto !important;
+    min-height: 42px !important;
 
     margin: auto 0 0 0 !important;
 
-    padding: 11px 18px !important;
+    padding:
+        10px
+        16px !important;
 
     background: var(--star-navy) !important;
     background-color: var(--star-navy) !important;
@@ -395,7 +402,7 @@ body {
     color: var(--star-white) !important;
 
     border: 1px solid var(--star-navy) !important;
-    border-radius: 9px !important;
+    border-radius: 8px !important;
 
     box-shadow:
         0 2px 5px rgba(16, 47, 69, 0.15) !important;
@@ -405,10 +412,16 @@ body {
 
     line-height: 1.2 !important;
 
+    white-space: normal !important;
+
+    overflow-wrap: anywhere !important;
+
     text-align: center !important;
 
     text-decoration: none !important;
     text-shadow: none !important;
+
+    text-indent: 0 !important;
 
     visibility: visible !important;
     opacity: 1 !important;
@@ -416,6 +429,8 @@ body {
     cursor: pointer !important;
 
     box-sizing: border-box !important;
+
+    overflow: hidden !important;
 
     transition:
         background-color 0.2s ease,
@@ -430,15 +445,31 @@ body {
 #rightSidebarLeftContent article.post.medium a.button.color::after {
     content: "\2192";
 
-    display: inline-block;
+    display: inline-block !important;
 
-    font-size: 16px;
+    position: static !important;
 
-    line-height: 1;
+    width: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: none !important;
+
+    border: 0 !important;
+
+    font-size: 15px !important;
+
+    line-height: 1 !important;
+
+    flex: 0 0 auto !important;
 
     transition: transform 0.2s ease !important;
 }
 
+
+/* Button hover */
 
 #rightSidebarLeftContent article.post.medium a.button.color:hover,
 #rightSidebarLeftContent article.post.medium a.button.color:focus {
@@ -458,7 +489,7 @@ body {
 
 
 #rightSidebarLeftContent article.post.medium a.button.color:hover::after {
-    transform: translateX(3px);
+    transform: translateX(2px);
 }
 
 
@@ -499,12 +530,10 @@ body {
     position: static !important;
 
     width: 100% !important;
+    max-width: 100% !important;
 
     margin: 10px 0 0 0 !important;
     padding: 8px 0 0 0 !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
 
     box-sizing: border-box !important;
 }
@@ -566,11 +595,6 @@ body {
     text-decoration: none !important;
 
     box-sizing: border-box !important;
-
-    transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        color 0.2s ease !important;
 }
 
 
@@ -613,9 +637,6 @@ body {
     margin: 0 !important;
     padding: 0 !important;
 
-    visibility: visible !important;
-    opacity: 1 !important;
-
     box-sizing: border-box !important;
 }
 
@@ -628,6 +649,7 @@ body {
     display: block !important;
 
     width: 100% !important;
+    max-width: 100% !important;
 
     margin: 0 !important;
 
@@ -641,6 +663,8 @@ body {
     box-shadow: var(--star-shadow) !important;
 
     box-sizing: border-box !important;
+
+    overflow: hidden !important;
 }
 
 
@@ -652,6 +676,7 @@ body {
     position: relative !important;
 
     width: 100% !important;
+    max-width: 100% !important;
 
     margin: 0 !important;
 
@@ -701,6 +726,8 @@ body {
     display: block !important;
 
     width: 100% !important;
+    max-width: 100% !important;
+
     height: 44px !important;
 
     margin: 0 !important;
@@ -756,6 +783,8 @@ body {
     background-color: var(--star-navy) !important;
 
     border-radius: 0 8px 8px 0 !important;
+
+    box-sizing: border-box !important;
 }
 
 
@@ -765,10 +794,7 @@ body {
 
 
 /* =========================================================
-   TABLET / SMALL SCREEN
-
-   max-device-width is included because this older RAMCO
-   page may not use a modern viewport configuration.
+   TABLET
    ========================================================= */
 
 @media screen and (max-width: 800px),
@@ -791,8 +817,7 @@ body {
         width: 100% !important;
         max-width: 100% !important;
 
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        margin: 0 !important;
 
         padding-left: 8px !important;
         padding-right: 8px !important;
@@ -806,14 +831,8 @@ body {
         margin: 0 !important;
 
         padding: 16px !important;
-
-        overflow: hidden !important;
     }
 
-
-    /*
-       Stop using the desktop 75% / 25% floats.
-    */
 
     #rightSidebarLeftContent {
         float: none !important;
@@ -825,8 +844,6 @@ body {
             repeat(2, minmax(0, 1fr)) !important;
 
         margin: 0 !important;
-
-        overflow: visible !important;
     }
 
 
@@ -839,22 +856,11 @@ body {
         margin: 18px 0 0 0 !important;
     }
 
-
-    #rightSidebar {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
 }
 
 
 /* =========================================================
    MOBILE
-
-   Force ONE CARD PER ROW.
-
-   max-device-width catches older pages where the normal
-   viewport width media query may not behave correctly.
    ========================================================= */
 
 @media screen and (max-width: 600px),
@@ -866,7 +872,6 @@ body {
     #content {
         width: 100% !important;
         max-width: 100% !important;
-
         min-width: 0 !important;
 
         margin-left: 0 !important;
@@ -888,7 +893,9 @@ body {
         padding-left: 4px !important;
         padding-right: 4px !important;
 
-        overflow: hidden !important;
+        overflow-x: hidden !important;
+
+        box-sizing: border-box !important;
     }
 
 
@@ -903,7 +910,7 @@ body {
         margin: 0 !important;
         padding: 0 !important;
 
-        overflow: visible !important;
+        box-sizing: border-box !important;
     }
 
 
@@ -918,14 +925,14 @@ body {
 
         padding: 12px !important;
 
-        overflow: hidden !important;
+        overflow-x: hidden !important;
 
         box-sizing: border-box !important;
     }
 
 
     /* =====================================================
-       RECORD AREA - FORCE SINGLE COLUMN
+       RECORD AREA
        ===================================================== */
 
     #rightSidebarLeftContent {
@@ -941,15 +948,11 @@ body {
 
         float: none !important;
 
-        position: static !important;
-
         width: 100% !important;
         max-width: 100% !important;
         min-width: 0 !important;
 
         height: auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
 
         margin: 0 !important;
         padding: 0 !important;
@@ -996,41 +999,76 @@ body {
         height: auto !important;
         min-height: 0 !important;
 
-        padding: 20px !important;
+        padding: 18px !important;
+
+        overflow: hidden !important;
 
         box-sizing: border-box !important;
     }
 
 
     #rightSidebarLeftContent article.post.medium h2 {
-        font-size: 19px !important;
+        font-size: 18px !important;
     }
 
 
     #rightSidebarLeftContent article.post.medium .medium-content > p {
-        margin-bottom: 18px !important;
+        margin-bottom: 16px !important;
 
         font-size: 13px !important;
     }
 
 
-    /* Full-width mobile button */
+    /* =====================================================
+       MOBILE BUTTON
+
+       IMPORTANT:
+       Do NOT make this width:100%.
+       RAMCO's legacy button styling causes overflow.
+       ===================================================== */
 
     #rightSidebarLeftContent article.post.medium a.button.color {
-        align-self: stretch !important;
+        display: inline-flex !important;
 
-        width: 100% !important;
+        align-self: flex-start !important;
+
+        position: static !important;
+
+        float: none !important;
+
+        width: auto !important;
         max-width: 100% !important;
+        min-width: 0 !important;
 
-        min-height: 46px !important;
+        height: auto !important;
+        min-height: 42px !important;
 
-        padding: 12px 16px !important;
+        margin: 0 !important;
+
+        padding:
+            10px
+            14px !important;
+
+        font-size: 13px !important;
+
+        line-height: 1.2 !important;
+
+        white-space: normal !important;
+
+        overflow: hidden !important;
 
         box-sizing: border-box !important;
     }
 
 
-    /* Pagination */
+    #rightSidebarLeftContent article.post.medium a.button.color::after {
+        flex: 0 0 auto !important;
+    }
+
+
+    /* =====================================================
+       PAGINATION
+       ===================================================== */
 
     #RightSidebarLeftContentPlaceHolder_queryList_PageFilter_ClearFix,
     #rightSidebarLeftContent .pagination,
@@ -1043,17 +1081,19 @@ body {
 
 
     #rightSidebarLeftContent .pagination ul {
-        justify-content: center !important;
+        justify-content: flex-start !important;
     }
 
 
     #rightSidebarLeftContent .pagination ul li a {
-        min-width: 40px !important;
-        height: 40px !important;
+        min-width: 38px !important;
+        height: 38px !important;
     }
 
 
-    /* Search below records */
+    /* =====================================================
+       SEARCH
+       ===================================================== */
 
     #rightSidebarRightContent {
         display: block !important;
@@ -1074,7 +1114,7 @@ body {
         width: 100% !important;
         max-width: 100% !important;
 
-        padding: 18px !important;
+        padding: 16px !important;
 
         border-radius: 12px !important;
 
@@ -1092,7 +1132,7 @@ body {
        screen and (max-device-width: 380px) {
 
     #RightSidebarLayout {
-        padding: 9px !important;
+        padding: 8px !important;
     }
 
 
@@ -1102,17 +1142,26 @@ body {
 
 
     #rightSidebarLeftContent article.post.medium .medium-content {
-        padding: 18px !important;
+        padding: 16px !important;
     }
 
 
     #rightSidebarLeftContent article.post.medium h2 {
-        font-size: 18px !important;
+        font-size: 17px !important;
+    }
+
+
+    #rightSidebarLeftContent article.post.medium a.button.color {
+        padding:
+            9px
+            12px !important;
+
+        font-size: 12px !important;
     }
 
 
     #rightSidebar {
-        padding: 16px !important;
+        padding: 14px !important;
     }
 
 }
